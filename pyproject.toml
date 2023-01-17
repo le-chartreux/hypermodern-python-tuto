@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "hypermodern-python-tuto"
+version = "0.1.0"
+description = "Repo to follow the Claudio Jolowicz's tutorial about Hypermodern Python (https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)"
+authors = ["le-chartreux <le-chartreux-vert@protonmail.com>"]
+readme = "README.md"
+packages = [{include = "hypermodern_python", from = "src"}]
+license = "MIT"
+homepage = "https://github.com/le-chartreux/hypermodern-python-tuto"
+repository = "https://github.com/le-chartreux/hypermodern-python-tuto"
+keywords = ["hypermodern"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
