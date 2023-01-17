@@ -13,6 +13,7 @@ keywords = ["hypermodern"]
 [tool.poetry.dependencies]
 python = "^3.10"
 click = "^8.1.3"
+requests = "^2.28.2"
 
 [tool.poetry.scripts]
 hypermodern-python = "hypermodern_python.console:main"
