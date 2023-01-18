@@ -3,6 +3,7 @@ import typing
 import requests
 
 import hypermodern_python.wikipedia.article
+import hypermodern_python.language
 
 
 class WikipediaRequester:
@@ -31,8 +32,8 @@ class WikipediaRequester:
         summary = article_dict["extract"]
         return hypermodern_python.wikipedia.article.WikipediaArticle(title, summary)
 
-    def set_language_to_french(self) -> None:
-        self.__language = "fr"
-
-    def set_language_to_english(self) -> None:
-        self.__language = "en"
+    def set_language(self, language: hypermodern_python.language.Language) -> None:
+        if language is hypermodern_python.language.Language.FRENCH:
+            self.__language = "fr"
+        else:
+            self.__language = "en"
