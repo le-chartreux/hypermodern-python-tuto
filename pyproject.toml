@@ -20,6 +20,18 @@ hypermodern-python = "hypermodern_python.__main__:main"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
+pytest-cov = "^4.0.0"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["hypermodern_python"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
 
 [build-system]
 requires = ["poetry-core"]
