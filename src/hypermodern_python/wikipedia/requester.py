@@ -12,20 +12,20 @@ class WikipediaRequester:
         self.__language = "en"
 
     def get_random_article(self) -> hypermodern_python.wikipedia.article.WikipediaArticle:
-        article_dict = self.__request_random_article_dict()
-        return self.__article_dict_to_article(article_dict)
+        article_dict = self._request_random_article_dict()
+        return self._article_dict_to_article(article_dict)
 
-    def __request_random_article_dict(self) -> dict[typing.Any, typing.Any]:
-        with requests.get(self.__get_url()) as response:
+    def _request_random_article_dict(self) -> dict[typing.Any, typing.Any]:
+        with requests.get(self._get_url()) as response:
             response.raise_for_status()
             article = response.json()
         return article
 
-    def __get_url(self) -> str:
+    def _get_url(self) -> str:
         return self.__base_url.format(language=self.__language)
 
     @staticmethod
-    def __article_dict_to_article(
+    def _article_dict_to_article(
             article_dict: dict[typing.Any, typing.Any]
     ) -> hypermodern_python.wikipedia.article.WikipediaArticle:
         title = article_dict["title"]
