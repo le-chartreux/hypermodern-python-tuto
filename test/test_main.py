@@ -1,6 +1,5 @@
 import click.testing
 import pytest
-import pytest_mock
 
 import hypermodern_python.__main__
 
@@ -8,16 +7,6 @@ import hypermodern_python.__main__
 @pytest.fixture
 def runner() -> click.testing.CliRunner:
     return click.testing.CliRunner()
-
-
-@pytest.fixture
-def mock_requests_get(mocker: pytest_mock.plugin.MockerFixture):
-    mock = mocker.patch("requests.get")
-    mock.return_value.__enter__.return_value.json.return_value = {
-        "title": "Lorem Ipsum",
-        "extract": "Lorem ipsum dolor sit amet",
-    }
-    return mock
 
 
 def test_main_succeeds(runner: click.testing.CliRunner, mock_requests_get) -> None:
