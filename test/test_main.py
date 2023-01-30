@@ -1,3 +1,5 @@
+import requests
+
 import click.testing
 import pytest
 
