@@ -1,3 +1,5 @@
+import requests
+
 import click
 
 import hypermodern_python
@@ -20,6 +22,10 @@ def main(language: hypermodern_python.language.Language) -> None:
     """
     wikipedia_requester = hypermodern_python.wikipedia.requester.WikipediaRequester()
     wikipedia_requester.set_language(language)
-    wikipedia_article = wikipedia_requester.get_random_article()
+    try:
+        wikipedia_article = wikipedia_requester.get_random_article()
+    except requests.RequestException as error:
+        message = str(error)
+        raise click.ClickException(message)
 
     hypermodern_python.ui.print_wikipedia_article(wikipedia_article)
