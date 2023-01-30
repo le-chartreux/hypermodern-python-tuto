@@ -45,3 +45,9 @@ def test_main_uses_correct_wikipedia_for_language(runner, mock_requests_get):
         runner.invoke(hypermodern_python.__main__.main, arg_to_use_language)
         args, _ = mock_requests_get.call_args
         assert expected_url in args[0]
+
+
+def test_main_prints_message_on_request_error(runner, mock_requests_get):
+    mock_requests_get.side_effect = requests.RequestException
+    result = runner.invoke(hypermodern_python.__main__.main)
+    assert "Error" in result.output
