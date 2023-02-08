@@ -1,2 +1,60 @@
 # hypermodern-python-tuto
-Repo to follow the Claudio Jolowicz's [tutorial about Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/) 
+
+Repo to follow the Claudio Jolowicz's [tutorial about Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/).
+
+## Table of contents
+
+- [Description of the application](#description-of-the-application)
+- [Installation](#install)
+- [Use](#use)
+- [Tools used](#tools-used)
+  - [Generic tools](#generic-tools)
+  - [Generic Python tools](#generic-python-tools)
+    - [Setup](#setup)
+    - [Test](#test)
+  - [Specific Python tools](#specific-python-tools)
+
+## Description of the application
+
+The app created is a CLI application that queries a random Wikipedia page and displays its title and summary.
+
+## Install
+
+TODO
+
+## Use
+
+TODO
+
+## Tools used
+
+### Generic tools
+
+Tools that can be used in every development project, no matter if it's a Python project or not.
+
+- [git](https://git-scm.com/), to manage versions of the source code
+- [GitHub](https://github.com/le-chartreux/hypermodern-python-tuto), to host the git repository
+
+### Generic Python tools
+
+Tools that can be used in every Python project, no matter its content.
+
+#### Setup
+
+- [poetry](https://python-poetry.org/), to manage packaging and dependencies
+- [pyenv](https://github.com/pyenv/pyenv), to manage Python versions
+
+#### Test
+
+- [pytest](https://docs.pytest.org/en/latest/), a framework to write unit tests
+- [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/), to mesure the code coverage (degree to which the source code of a program is executed while running its test suite)
+- [pytest-mock](https://pytest-mock.readthedocs.io/en/latest/), to use the [unittest](https://docs.python.org/3/library/unittest.html) mocking in the pytest way
+- [nox](https://nox.thea.codes/en/stable/), to automate testing in multiple Python environments
+
+### Specific Python tools
+
+Tools to match specific needs of the projet.
+
+- [click](https://click.palletsprojects.com/en/8.1.x/), to create CLI applications
+- [requests](https://requests.readthedocs.io/en/latest/), to make HTTP requests
+
