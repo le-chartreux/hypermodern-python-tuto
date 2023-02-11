@@ -29,7 +29,7 @@ def test_main_invokes_requests_get(runner, mock_requests_get):
 def test_main_uses_correct_wikipedia_for_language(runner, mock_requests_get):
     expected_url_and_arg_to_use = (
         ("en.wikipedia.org", "--language english"),
-        ("en.wikipedia.org", "--language someting"),
+        ("en.wikipedia.org", "--language something"),
         ("fr.wikipedia.org", "--language french")
     )
 
