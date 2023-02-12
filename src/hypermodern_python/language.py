@@ -31,9 +31,9 @@ class Language(str, enum.Enum):
     @classmethod
     def from_str(cls, language: str) -> "Language":
         language = language.lower()
-        if "fr" in language:
+        if language.startswith("fr"):
             return cls.FRENCH
-        elif "en" in language:
+        elif language.startswith("en"):
             return cls.ENGLISH
         else:
             return cls.OTHER
