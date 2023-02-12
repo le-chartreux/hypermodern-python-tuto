@@ -1,5 +1,4 @@
 import os
-import locale
 
 import pytest
 import pytest_mock
