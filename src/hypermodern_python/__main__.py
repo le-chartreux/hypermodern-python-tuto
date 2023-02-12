@@ -11,9 +11,9 @@ import hypermodern_python.wikipedia.requester
 @click.command()
 @click.version_option(version=hypermodern_python.__version__)
 @click.option(
-    "--language",
+    '--language',
     type=click.Choice(hypermodern_python.language.Language, case_sensitive=False),
-    help="Set the language of the page",
+    help='Set the language of the page',
     default=hypermodern_python.language.Language.from_preferences()
 )
 def main(language: hypermodern_python.language.Language) -> None:

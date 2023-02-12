@@ -18,7 +18,7 @@ def test_main_succeeds(runner: click.testing.CliRunner, mock_requests_get) -> No
 
 def test_main_prints_title(runner, mock_requests_get):
     result = runner.invoke(hypermodern_python.__main__.main)
-    assert "Lorem Ipsum" in result.output
+    assert 'Lorem Ipsum' in result.output
 
 
 def test_main_invokes_requests_get(runner, mock_requests_get):
@@ -28,9 +28,9 @@ def test_main_invokes_requests_get(runner, mock_requests_get):
 
 def test_main_uses_correct_wikipedia_for_language(runner, mock_requests_get):
     expected_url_and_arg_to_use = (
-        ("en.wikipedia.org", "--language english"),
-        ("en.wikipedia.org", "--language something"),
-        ("fr.wikipedia.org", "--language french")
+        ('en.wikipedia.org', '--language english'),
+        ('en.wikipedia.org', '--language something'),
+        ('fr.wikipedia.org', '--language french')
     )
 
     for expected_url, arg_to_use_language in expected_url_and_arg_to_use:
@@ -42,4 +42,4 @@ def test_main_uses_correct_wikipedia_for_language(runner, mock_requests_get):
 def test_main_prints_message_on_request_error(runner, mock_requests_get):
     mock_requests_get.side_effect = requests.RequestException
     result = runner.invoke(hypermodern_python.__main__.main)
-    assert "Error" in result.output
+    assert 'Error' in result.output
