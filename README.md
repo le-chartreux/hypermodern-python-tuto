@@ -54,6 +54,12 @@ Tools that can be used in every Python project, no matter its content.
 ### Linting
 
 - [flake8](https://flake8.pycqa.org/en/latest/), a linter aggregator
+- [flake8-import-order](https://github.com/PyCQA/flake8-import-order), to verify that imports are grouped and ordered in a consistent way
+
+### Formatting
+
+- [black](https://black.readthedocs.io/en/stable/), to format the code
+
 
 ### Specific Python tools
 
