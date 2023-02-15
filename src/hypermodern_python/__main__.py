@@ -27,6 +27,6 @@ def main(language: hypermodern_python.wikipedia.language.Language) -> None:
         wikipedia_article = wikipedia_requester.get_random_article()
     except requests.RequestException as error:
         message = str(error)
-        raise click.ClickException(message)
+        raise click.ClickException(message) from error
 
     hypermodern_python.ui.print_wikipedia_article(wikipedia_article)
