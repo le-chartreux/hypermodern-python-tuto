@@ -11,7 +11,7 @@ select = F,W,E,C,BLK,I,B,B9
 ignore = E203,E501,W503
 
 # black
-max-line-length = 8
+max-line-length = 88
 
 # import order
 application-import-names = hypermodern_python,test
