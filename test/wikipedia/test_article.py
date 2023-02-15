@@ -1,9 +1,9 @@
-import hypermodern_python.wikipedia.article
+from hypermodern_python.wikipedia.article import WikipediaArticle
 
 
 def test_init() -> None:
     title = 'title'
     summary = 'summary'
-    article = hypermodern_python.wikipedia.article.WikipediaArticle(title, summary)
+    article = WikipediaArticle(title, summary)
     assert article.title == title
     assert article.summary == summary
