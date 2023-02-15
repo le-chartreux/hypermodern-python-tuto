@@ -13,20 +13,20 @@ def test_init() -> None:
 
 
 def test_from_preferences_os_posix(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(os, 'name', 'posix')
-    monkeypatch.setattr(Language, '_from_preferences_posix', lambda: Language.FRENCH)
+    monkeypatch.setattr(os, "name", "posix")
+    monkeypatch.setattr(Language, "_from_preferences_posix", lambda: Language.FRENCH)
     assert Language.from_preferences() == Language.FRENCH
 
 
 def test_from_preferences_os_windows(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(os, 'name', 'windows')
-    monkeypatch.setattr(Language, '_from_preferences_windows', lambda: Language.FRENCH)
+    monkeypatch.setattr(os, "name", "windows")
+    monkeypatch.setattr(Language, "_from_preferences_windows", lambda: Language.FRENCH)
     assert Language.from_preferences() == Language.FRENCH
 
 
 def test_from_preferences_posix(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(os, 'environ', {'LANG': 'fr'})
-    monkeypatch.setattr(Language, 'from_str', lambda: Language.FRENCH)
+    monkeypatch.setattr(os, "environ", {"LANG": "fr"})
+    monkeypatch.setattr(Language, "from_str", lambda: Language.FRENCH)
 
 
 def test_from_preferences_windows(mocker: pytest_mock.MockerFixture) -> None:
