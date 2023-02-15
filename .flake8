@@ -5,7 +5,7 @@
 # BLK: blake warnings (formatting)
 # I: import order
 # B & B9: bug-bear (bugs & design problems)
-select = F,W,E,C,BLK,I,B,B9
+select = F,W,E,C,BLK,I,B,B9,S
 # ignore E203 and W503 to match blake standards
 # ignore E501 because bug-bear already set it with a tolerance of 10% (B9)
 ignore = E203,E501,W503
@@ -16,3 +16,7 @@ max-line-length = 88
 # import order
 application-import-names = hypermodern_python,test
 import-order-style = google
+
+# bandit
+# disable warnings on asserts for tests
+per-file-ignores = test/*:S101

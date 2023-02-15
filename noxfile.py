@@ -2,7 +2,7 @@ import nox
 
 nox.options.sessions = "lint", "tests"
 
-code_locations = "src", "test", "noxfile.py"
+code_locations = "src", "test", "./noxfile.py"
 python_versions = "3.10", "3.11"
 latest_python = python_versions[-1]
 
@@ -20,7 +20,12 @@ def tests(session: nox.sessions.Session) -> None:
 def lint(session: nox.sessions.Session) -> None:
     """Runs linting"""
     linter = "flake8"
-    linter_plugins = "flake8-black", "flake8-import-order", "flake8-bugbear"
+    linter_plugins = (
+        "flake8-bandit",
+        "flake8-black",
+        "flake8-bugbear",
+        "flake8-import-order",
+    )
     args = session.posargs or code_locations
     session.install(linter, *linter_plugins)
     session.run(linter, *args)
