@@ -51,6 +51,10 @@ Tools that can be used in every Python project, no matter its content.
 - [pytest-mock](https://pytest-mock.readthedocs.io/en/latest/), to use the [unittest](https://docs.python.org/3/library/unittest.html) mocking in the pytest way
 - [nox](https://nox.thea.codes/en/stable/), to automate testing in multiple Python environments
 
+### Linting
+
+- [flake8](https://flake8.pycqa.org/en/latest/), a linter aggregator
+
 ### Specific Python tools
 
 Tools to match specific needs of the projet.
