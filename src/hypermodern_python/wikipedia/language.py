@@ -1,6 +1,6 @@
+import ctypes
 import enum
 import locale
-import ctypes
 import os
 
 

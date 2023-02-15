@@ -1,6 +1,5 @@
-import requests
-
 import click
+import requests
 
 import hypermodern_python
 import hypermodern_python.ui

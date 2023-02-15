@@ -1,8 +1,8 @@
-import requests
+import unittest.mock
 
 import click.testing
 import pytest
-import unittest.mock
+import requests
 
 from hypermodern_python.__main__ import main
 

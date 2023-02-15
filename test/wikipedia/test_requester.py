@@ -1,7 +1,7 @@
 import unittest.mock
 
-from hypermodern_python.wikipedia.requester import WikipediaRequester
 from hypermodern_python.wikipedia.language import Language
+from hypermodern_python.wikipedia.requester import WikipediaRequester
 
 
 def test_random_page_uses_given_language(mock_requests_get: unittest.mock.MagicMock):
