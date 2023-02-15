@@ -2,6 +2,7 @@ import requests
 
 import click.testing
 import pytest
+import unittest.mock
 
 from hypermodern_python.__main__ import main
 
@@ -11,22 +12,25 @@ def runner() -> click.testing.CliRunner:
     return click.testing.CliRunner()
 
 
-def test_main_succeeds(runner: click.testing.CliRunner, mock_requests_get) -> None:
+def test_main_succeeds(runner: click.testing.CliRunner, mock_requests_get: unittest.mock.MagicMock) -> None:
     result = runner.invoke(main)
     assert result.exit_code == 0
 
 
-def test_main_prints_title(runner, mock_requests_get):
+def test_main_prints_title(runner: click.testing.CliRunner, mock_requests_get: unittest.mock.MagicMock) -> None:
     result = runner.invoke(main)
     assert 'Lorem Ipsum' in result.output
 
 
-def test_main_invokes_requests_get(runner, mock_requests_get):
+def test_main_invokes_requests_get(runner: click.testing.CliRunner, mock_requests_get: unittest.mock.MagicMock) -> None:
     runner.invoke(main)
     assert mock_requests_get.called
 
 
-def test_main_uses_correct_wikipedia_for_language(runner, mock_requests_get):
+def test_main_uses_correct_wikipedia_for_language(
+        runner: click.testing.CliRunner,
+        mock_requests_get: unittest.mock.MagicMock
+) -> None:
     expected_url_and_arg_to_use = (
         ('en.wikipedia.org', '--language english'),
         ('en.wikipedia.org', '--language something'),
@@ -39,7 +43,10 @@ def test_main_uses_correct_wikipedia_for_language(runner, mock_requests_get):
         assert expected_url in args[0]
 
 
-def test_main_prints_message_on_request_error(runner, mock_requests_get):
+def test_main_prints_message_on_request_error(
+        runner: click.testing.CliRunner,
+        mock_requests_get
+) -> None:
     mock_requests_get.side_effect = requests.RequestException
     result = runner.invoke(main)
     assert 'Error' in result.output
