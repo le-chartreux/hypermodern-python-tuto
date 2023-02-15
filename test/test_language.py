@@ -3,7 +3,7 @@ import os
 import pytest
 import pytest_mock
 
-from hypermodern_python.language import Language
+from hypermodern_python.wikipedia.language import Language
 
 
 def test_init() -> None:

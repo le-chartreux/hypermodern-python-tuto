@@ -4,7 +4,7 @@ import click
 
 import hypermodern_python
 import hypermodern_python.ui
-import hypermodern_python.language
+import hypermodern_python.wikipedia.language
 import hypermodern_python.wikipedia.requester
 
 
@@ -12,11 +12,11 @@ import hypermodern_python.wikipedia.requester
 @click.version_option(version=hypermodern_python.__version__)
 @click.option(
     '--language',
-    type=click.Choice(hypermodern_python.language.Language, case_sensitive=False),
+    type=click.Choice(hypermodern_python.wikipedia.language.Language, case_sensitive=False),
     help='Set the language of the page',
-    default=hypermodern_python.language.Language.from_preferences()
+    default=hypermodern_python.wikipedia.language.Language.from_preferences()
 )
-def main(language: hypermodern_python.language.Language) -> None:
+def main(language: hypermodern_python.wikipedia.language.Language) -> None:
     """
     Displays the title and the summary of a random Wikipedia article
     """

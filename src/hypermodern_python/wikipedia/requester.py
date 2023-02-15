@@ -3,7 +3,7 @@ import typing
 import requests
 
 from hypermodern_python.wikipedia.article import WikipediaArticle
-from hypermodern_python.language import Language
+from hypermodern_python.wikipedia.language import Language
 
 
 class WikipediaRequester:

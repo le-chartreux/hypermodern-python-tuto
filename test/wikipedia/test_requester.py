@@ -1,5 +1,5 @@
 from hypermodern_python.wikipedia.requester import WikipediaRequester
-from hypermodern_python.language import Language
+from hypermodern_python.wikipedia.language import Language
 
 
 def test_random_page_uses_given_language(mock_requests_get):
