@@ -50,3 +50,9 @@ def test_main_prints_message_on_request_error(
     mock_requests_get.side_effect = requests.RequestException
     result = runner.invoke(main)
     assert 'Error' in result.output
+
+
+@pytest.mark.e2e
+def test_main_succeeds_in_production_env(runner: click.testing.CliRunner) -> None:
+    result = runner.invoke(main)
+    assert result.exit_code == 0

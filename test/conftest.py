@@ -2,6 +2,10 @@ import pytest
 import pytest_mock
 
 
+def pytest_configure(config):
+    config.addinivalue_line("markers", "e2e: mark as end-to-end test.")
+
+
 @pytest.fixture
 def mock_requests_get(mocker: pytest_mock.plugin.MockerFixture):
     mock_get = mocker.patch('requests.get')
