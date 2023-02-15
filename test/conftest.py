@@ -4,9 +4,9 @@ import pytest_mock
 
 @pytest.fixture
 def mock_requests_get(mocker: pytest_mock.plugin.MockerFixture):
-    mock = mocker.patch('requests.get')
-    mock.return_value.__enter__.return_value.json.return_value = {
+    mock_get = mocker.patch('requests.get')
+    mock_get.return_value.__enter__.return_value.json.return_value = {
         'title': 'Lorem Ipsum',
         'extract': 'Lorem ipsum dolor sit amet',
     }
-    return mock
+    return mock_get
