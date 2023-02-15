@@ -20,7 +20,7 @@ def tests(session: nox.sessions.Session) -> None:
 def lint(session: nox.sessions.Session) -> None:
     """Runs linting"""
     linter = "flake8"
-    linter_plugins = "flake8-black", "flake8-import-order"
+    linter_plugins = "flake8-black", "flake8-import-order", "flake8-bugbear"
     args = session.posargs or code_locations
     session.install(linter, *linter_plugins)
     session.run(linter, *args)
