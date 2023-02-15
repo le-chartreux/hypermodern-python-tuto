@@ -1,8 +1,18 @@
 [flake8]
-select = B,B9,BLK,C,E,F,I,W
+# F: pyflakes (invalid Python code)
+# W & E: pycodestyle (violation of PEP-8)
+# C: McCabe (code complexity)
+# BLK: blake warnings (formatting)
+# I: import order
+# B & B9: bug-bear (bugs & design problems)
+select = F,W,E,C,BLK,I,B,B9
+# ignore E203 and W503 to match blake standards
+# ignore E501 because bug-bear already set it with a tolerance of 10% (B9)
 ignore = E203,E501,W503
+
 # black
-max-line-length = 88
+max-line-length = 8
+
 # import order
 application-import-names = hypermodern_python,test
 import-order-style = google
