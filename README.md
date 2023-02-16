@@ -39,9 +39,13 @@ Tools that can be used in every development project, no matter if it's a Python 
 
 Tools that can be used in every Python project, no matter its content.
 
+#### Multi-purpose
+
+- [poetry](https://python-poetry.org/), to make development and distribution easy (packaging, virtualization, dependencies, launching and publishing)
+- [nox](https://nox.thea.codes/en/stable/), to run tasks in multiple Python environments (like tests, linting, reformatting, etc.)
+
 #### Setup
 
-- [poetry](https://python-poetry.org/), to manage packaging and dependencies
 - [pyenv](https://github.com/pyenv/pyenv), to manage Python versions
 
 #### Test
@@ -49,7 +53,6 @@ Tools that can be used in every Python project, no matter its content.
 - [pytest](https://docs.pytest.org/en/latest/), a framework to write unit tests
 - [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/), to mesure the code coverage (degree to which the source code of a program is executed while running its test suite)
 - [pytest-mock](https://pytest-mock.readthedocs.io/en/latest/), to use the [unittest](https://docs.python.org/3/library/unittest.html) mocking in the pytest way
-- [nox](https://nox.thea.codes/en/stable/), to automate testing in multiple Python environments
 
 ### Linting
 
