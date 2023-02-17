@@ -5,6 +5,7 @@
 # BLK: blake warnings (formatting)
 # I: import order
 # B & B9: bug-bear (bugs & design problems)
+# S: Bandit (security)
 select = F,W,E,C,BLK,I,B,B9,S
 # ignore E203 and W503 to match blake standards
 # ignore E501 because bug-bear already set it with a tolerance of 10% (B9)
