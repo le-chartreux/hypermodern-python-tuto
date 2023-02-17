@@ -70,6 +70,10 @@ Tools that can be used in every Python project, no matter its content.
 
 - [black](https://black.readthedocs.io/en/stable/), to format the code
 
+### Type checking
+
+- [mypy](https://mypy-lang.org/), the classic type checker
+
 
 ### Specific Python tools
 

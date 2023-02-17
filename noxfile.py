@@ -2,17 +2,18 @@ import tempfile
 
 import nox
 
-nox.options.sessions = "lint", "tests", "safety"
+nox.options.sessions = "lint", "tests", "safety", "mypy"
 
 code_locations = "src", "test", "./noxfile.py"
 python_versions = "3.10", "3.11"
 latest_python = python_versions[-1]
 
+runner = "poetry"
+
 
 @nox.session(python=python_versions)
 def tests(session: nox.sessions.Session) -> None:
     """Runs all the tests"""
-    runner = "poetry"
     args = session.posargs or ["--cov", "-m", "not e2e"]
     session.run(runner, "install", "--with", "dev", external=True)
     session.run(runner, "run", "pytest", *args, external=True)
@@ -58,3 +59,11 @@ def safety(session: nox.sessions.Session):
         )
         session.install("safety")
         session.run("safety", "check", f"--file={requirements.name}", "--full-report")
+
+
+@nox.session(python=python_versions)
+def mypy(session: nox.sessions.Session):
+    args = session.posargs or code_locations
+    session.install("mypy")
+    session.install("types-requests")
+    session.run("mypy", *args)

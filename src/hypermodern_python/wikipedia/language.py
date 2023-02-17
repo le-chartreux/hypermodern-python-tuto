@@ -23,7 +23,7 @@ class Language(str, enum.Enum):
 
     @classmethod
     def _from_preferences_windows(cls) -> "Language":
-        windll = ctypes.windll.kernel32
+        windll = ctypes.windll.kernel32  # type: ignore
         language = locale.windows_locale[windll.GetUserDefaultUILanguage()]
         return cls.from_str(language)
 
