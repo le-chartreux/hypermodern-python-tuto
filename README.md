@@ -34,6 +34,7 @@ Tools that can be used in every development project, no matter if it's a Python 
 
 - [git](https://git-scm.com/), to manage versions of the source code
 - [GitHub](https://github.com/le-chartreux/hypermodern-python-tuto), to host the git repository
+- [pre-commit](https://pre-commit.com/), to manage pre-commit hooks
 
 ### Generic Python tools
 
@@ -76,4 +77,3 @@ Tools to match specific needs of the projet.
 
 - [click](https://click.palletsprojects.com/en/8.1.x/), to create CLI applications
 - [requests](https://requests.readthedocs.io/en/latest/), to make HTTP requests
-
