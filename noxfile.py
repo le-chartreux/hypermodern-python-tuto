@@ -1,6 +1,8 @@
+import tempfile
+
 import nox
 
-nox.options.sessions = "lint", "tests"
+nox.options.sessions = "lint", "tests", "safety"
 
 code_locations = "src", "test", "./noxfile.py"
 python_versions = "3.10", "3.11"
@@ -38,3 +40,21 @@ def reformat(session: nox.sessions.Session) -> None:
     args = session.posargs or code_locations
     session.install(formatter)
     session.run(formatter, *args)
+
+
+@nox.session(python=latest_python)
+def safety(session: nox.sessions.Session):
+    """Runs Safety on the project"""
+    with tempfile.NamedTemporaryFile() as requirements:
+        session.run(
+            "poetry",
+            "export",
+            "--with",
+            "dev",
+            "--format=requirements.txt",
+            "--without-hashes",
+            f"--output={requirements.name}",
+            external=True,
+        )
+        session.install("safety")
+        session.run("safety", "check", f"--file={requirements.name}", "--full-report")
