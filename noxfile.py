@@ -12,43 +12,36 @@ runner = "poetry"
 
 
 @nox.session(python=python_versions)
-def tests(session: nox.sessions.Session) -> None:
-    """Runs all the tests"""
+def tests(session: nox.Session) -> None:
+    tester = "pytest"
     args = session.posargs or ["--cov", "-m", "not e2e"]
-    session.run(runner, "install", "--with", "dev", external=True)
-    session.run(runner, "run", "pytest", *args, external=True)
+    install_with(session, tester)
+    run(session, tester, *args)
 
 
 @nox.session(python=latest_python)
-def lint(session: nox.sessions.Session) -> None:
-    """Runs linting"""
+def lint(session: nox.Session) -> None:
     linter = "flake8"
-    linter_plugins = (
-        "flake8-bandit",
-        "flake8-black",
-        "flake8-bugbear",
-        "flake8-import-order",
-    )
     args = session.posargs or code_locations
-    session.install(linter, *linter_plugins)
-    session.run(linter, *args)
+    install_only(session, linter)
+    run(session, linter, *args)
 
 
 @nox.session(python=latest_python)
-def reformat(session: nox.sessions.Session) -> None:
-    """Runs code formatting"""
+def reformat(session: nox.Session) -> None:
     formatter = "black"
     args = session.posargs or code_locations
-    session.install(formatter)
-    session.run(formatter, *args)
+    install_only(session, formatter)
+    run(session, formatter, *args)
 
 
 @nox.session(python=latest_python)
-def safety(session: nox.sessions.Session):
-    """Runs Safety on the project"""
+def safety(session: nox.Session):
+    # not with poetry because it conflicts with blake
+    # (+ since its safety there is no reason to not take the latest)
     with tempfile.NamedTemporaryFile() as requirements:
         session.run(
-            "poetry",
+            runner,
             "export",
             "--with",
             "dev",
@@ -58,12 +51,34 @@ def safety(session: nox.sessions.Session):
             external=True,
         )
         session.install("safety")
-        session.run("safety", "check", f"--file={requirements.name}", "--full-report")
+        session.run(
+            "safety",
+            "check",
+            f"--file={requirements.name}",
+            "--full-report",
+        )
 
 
 @nox.session(python=python_versions)
-def mypy(session: nox.sessions.Session):
+def mypy(session: nox.Session):
+    target = "mypy"
     args = session.posargs or code_locations
-    session.install("mypy")
-    session.install("types-requests")
-    session.run("mypy", *args)
+    install_with(session, target)
+    run(session, target, *args)
+
+
+# everything after this line is utils
+def install_with(session: nox.Session, group: str) -> None:
+    install(session, "--with", group)
+
+
+def install_only(session: nox.Session, group: str) -> None:
+    install(session, f"--only={group}")
+
+
+def install(session: nox.Session, *args) -> None:
+    session.run(runner, "install", *args, external=True)
+
+
+def run(session: nox.Session, target: str, *args) -> None:
+    session.run(runner, "run", target, *args, external=True)
