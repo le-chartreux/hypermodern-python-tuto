@@ -6,7 +6,6 @@ authors = ["le-chartreux <le-chartreux-vert@protonmail.com>"]
 readme = "README.md"
 packages = [{include = "hypermodern_python", from = "src"}]
 license = "MIT"
-homepage = "https://github.com/le-chartreux/hypermodern-python-tuto"
 repository = "https://github.com/le-chartreux/hypermodern-python-tuto"
 keywords = ["hypermodern"]
 
