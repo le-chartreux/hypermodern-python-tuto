@@ -36,3 +36,7 @@ class Language(str, enum.Enum):
             return cls.ENGLISH
         else:
             return cls.OTHER
+
+    @classmethod
+    def list(cls) -> list[str]:
+        return [elem for elem in cls]
