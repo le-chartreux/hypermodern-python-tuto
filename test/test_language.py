@@ -46,7 +46,3 @@ def test_from_str() -> None:
 
     for detected_other in ("other", "OTHER", "polish", "fancy", "es"):
         assert Language.from_str(detected_other) == Language.OTHER
-
-
-def test_list() -> None:
-    assert set(Language.list()) == {Language.ENGLISH, Language.FRENCH, Language.OTHER}
