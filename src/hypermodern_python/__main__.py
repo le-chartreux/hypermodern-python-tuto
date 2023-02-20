@@ -12,7 +12,7 @@ import hypermodern_python.wikipedia.requester
 @click.option(
     "--language",
     type=click.Choice(
-        hypermodern_python.wikipedia.language.Language.list(), case_sensitive=False
+        list(hypermodern_python.wikipedia.language.Language), case_sensitive=False
     ),
     help="Set the language of the page",
     default=hypermodern_python.wikipedia.language.Language.from_preferences(),
