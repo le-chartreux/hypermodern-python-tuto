@@ -55,22 +55,22 @@ Tools that can be used in every Python project, no matter its content.
 - [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/), to mesure the code coverage (degree to which the source code of a program is executed while running its test suite)
 - [pytest-mock](https://pytest-mock.readthedocs.io/en/latest/), to use the [unittest](https://docs.python.org/3/library/unittest.html) mocking in the pytest way
 
-### Linting
+#### Linting
 
 - [flake8](https://flake8.pycqa.org/en/latest/), a linter aggregator
 - [flake8-import-order](https://github.com/PyCQA/flake8-import-order), to verify that imports are grouped and ordered in a consistent way
 - [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear), to find bugs and design problems
 
-### Security
+#### Security
 
 - [Bandit](https://bandit.readthedocs.io/en/latest/), to find security issues (used inside linting with [flake8-bandit](https://pypi.org/project/flake8-bandit/))
 - [Safety](https://pyup.io/safety/), to check if some packages are insecure
 
-### Formatting
+#### Formatting
 
 - [black](https://black.readthedocs.io/en/stable/), to format the code
 
-### Type checking
+#### Type checking
 
 - [mypy](https://mypy-lang.org/), the classic type checker
 - [pytype](https://google.github.io/pytype/), a static type checker
@@ -80,5 +80,10 @@ Tools that can be used in every Python project, no matter its content.
 
 Tools to match specific needs of the projet.
 
+#### UI
+
 - [click](https://click.palletsprojects.com/en/8.1.x/), to create CLI applications
+
+#### Communication
+
 - [requests](https://requests.readthedocs.io/en/latest/), to make HTTP requests
