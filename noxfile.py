@@ -2,11 +2,14 @@ import tempfile
 
 import nox
 
-nox.options.sessions = "lint", "tests", "safety", "mypy"
+nox.options.sessions = "lint", "tests", "safety", "mypy", "pytype"
 
 code_locations = "src", "test", "./noxfile.py"
 python_versions = "3.10", "3.11"
 latest_python = python_versions[-1]
+python_versions_under_3_11 = [
+    python_version for python_version in python_versions if python_version < "3.11"
+]
 
 runner = "poetry"
 
@@ -63,6 +66,14 @@ def safety(session: nox.Session):
 def mypy(session: nox.Session):
     target = "mypy"
     args = session.posargs or code_locations
+    install_with(session, target)
+    run(session, target, *args)
+
+
+@nox.session(python=python_versions_under_3_11)
+def pytype(session: nox.Session):
+    target = "pytype"
+    args = session.posargs or ["--disable=import-error", *code_locations]
     install_with(session, target)
     run(session, target, *args)
 
