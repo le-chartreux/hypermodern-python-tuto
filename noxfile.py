@@ -78,6 +78,16 @@ def pytype(session: nox.Session) -> None:
     run(session, target, *args)
 
 
+@nox.session(python=latest_python)
+def typeguard(session: nox.Session) -> None:
+    target = "pytest"
+    sub_target = "typeguard"
+    args = session.posargs or ["-m", "not e2e"]
+    args.append("--typeguard-packages=hypermodern_python")
+    install_with_multiple_groups(session, [target, sub_target])
+    run(session, target, *args)
+
+
 # everything after this line is utils
 def install_with_multiple_groups(session: nox.Session, groups: list[str]) -> None:
     args: list[str] = []
