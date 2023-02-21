@@ -39,7 +39,7 @@ def reformat(session: nox.Session) -> None:
 
 
 @nox.session(python=latest_python)
-def safety(session: nox.Session):
+def safety(session: nox.Session) -> None:
     # not with poetry because it conflicts with blake
     # (+ since its safety there is no reason to not take the latest)
     with tempfile.NamedTemporaryFile() as requirements:
@@ -63,7 +63,7 @@ def safety(session: nox.Session):
 
 
 @nox.session(python=python_versions)
-def mypy(session: nox.Session):
+def mypy(session: nox.Session) -> None:
     target = "mypy"
     args = session.posargs or code_locations
     install_with(session, target)
@@ -71,7 +71,7 @@ def mypy(session: nox.Session):
 
 
 @nox.session(python=python_versions_under_3_11)
-def pytype(session: nox.Session):
+def pytype(session: nox.Session) -> None:
     target = "pytype"
     args = session.posargs or ["--disable=import-error", *code_locations]
     install_with(session, target)
