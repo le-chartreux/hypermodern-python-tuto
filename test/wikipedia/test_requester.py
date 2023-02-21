@@ -18,6 +18,6 @@ def test_random_page_uses_given_language(mock_requests_get: unittest.mock.MagicM
 def test_random_page_handles_validation_errors(
     mock_requests_get: unittest.mock.MagicMock,
 ) -> None:
-    mock_requests_get.return_value.__enter__.return_value.json.return_value = None
+    mock_requests_get.return_value.__enter__.return_value.json.return_value = {}
     with pytest.raises(marshmallow.ValidationError):
         WikipediaRequester().get_random_article()
