@@ -79,6 +79,14 @@ def pytype(session: nox.Session) -> None:
 
 
 # everything after this line is utils
+def install_with_multiple_groups(session: nox.Session, groups: list[str]) -> None:
+    args: list[str] = []
+    for group in groups:
+        args.append("--with")
+        args.append(group)
+    install(session, *args)
+
+
 def install_with(session: nox.Session, group: str) -> None:
     install(session, "--with", group)
 

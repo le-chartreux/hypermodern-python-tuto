@@ -74,7 +74,7 @@ Tools that can be used in every Python project, no matter its content.
 
 - [mypy](https://mypy-lang.org/), the classic type checker
 - [pytype](https://google.github.io/pytype/), a static type checker
-
+- [typeguard](https://typeguard.readthedocs.io/en/latest/), a runtime type check
 
 ### Specific Python tools
 

@@ -45,6 +45,10 @@ pytest-mock = "^3.10.0"
 [tool.poetry.group.pytype.dependencies]
 pytype = {version = "^2023.2.17", python = "~3.10"}
 
+
+[tool.poetry.group.typeguard.dependencies]
+typeguard = "^2.13.3"
+
 [tool.coverage.paths]
 source = ["src"]
 
