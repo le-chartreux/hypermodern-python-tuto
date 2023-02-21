@@ -1,4 +1,5 @@
 import click
+import marshmallow
 import requests
 
 import hypermodern_python
@@ -25,7 +26,7 @@ def main(language: hypermodern_python.wikipedia.language.Language) -> None:
     wikipedia_requester.set_language(language)
     try:
         wikipedia_article = wikipedia_requester.get_random_article()
-    except requests.RequestException as error:
+    except (requests.RequestException, marshmallow.ValidationError) as error:
         message = str(error)
         raise click.ClickException(message) from error
 

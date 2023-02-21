@@ -1,8 +1,10 @@
 import typing
 
+import marshmallow
 import requests
 
 from hypermodern_python.wikipedia.article import WikipediaArticle
+from hypermodern_python.wikipedia.article_schema import WikipediaArticleSchema
 from hypermodern_python.wikipedia.language import Language
 
 
@@ -30,9 +32,8 @@ class WikipediaRequester:
     def _article_dict_to_article(
         article_dict: dict[typing.Any, typing.Any]
     ) -> WikipediaArticle:
-        title = article_dict["title"]
-        summary = article_dict["extract"]
-        return WikipediaArticle(title, summary)
+        schema = WikipediaArticleSchema()
+        return schema.load(article_dict, unknown=marshmallow.EXCLUDE)
 
     def set_language(self, language: Language) -> None:
         if language is Language.FRENCH:
