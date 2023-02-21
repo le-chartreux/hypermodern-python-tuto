@@ -10,3 +10,6 @@ class WikipediaArticleSchema(marshmallow.Schema):
     @marshmallow.post_load
     def make_article(self, data, **_kwargs) -> WikipediaArticle:
         return WikipediaArticle(**data)
+
+    class Meta:
+        unknown = marshmallow.EXCLUDE
