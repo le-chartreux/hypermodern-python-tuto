@@ -23,6 +23,12 @@ class WikipediaRequester:
 
         Returns:
             A random article from Wikipedia (WikipediaArticle)
+
+        Example:
+            >>> requester = WikipediaRequester()
+            >>> article = requester.get_random_article()
+            >>> bool(article)
+            True
         """
         article_dict = self._request_random_article_dict()
         return self._article_dict_to_article(article_dict)
