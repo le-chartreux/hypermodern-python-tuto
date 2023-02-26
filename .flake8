@@ -45,6 +45,8 @@ max-line-length = 88
 per-file-ignores =
     # asserts are OK for tests
     test/*:S101
+    # repeating the name of the function is OK for nox since it's to display it to the user
+    noxfile.py:D402
 
 # DOCSTRINGS
 docstring-convention = google
