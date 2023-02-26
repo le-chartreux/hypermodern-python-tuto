@@ -18,24 +18,24 @@ runner = "poetry"
 def tests(session: nox.Session) -> None:
     tester = "pytest"
     args = session.posargs or ["--cov", "-m", "not e2e"]
-    install_with(session, tester)
-    run(session, tester, *args)
+    _install_with(session, tester)
+    _run(session, tester, *args)
 
 
 @nox.session(python=latest_python)
 def lint(session: nox.Session) -> None:
     linter = "flake8"
     args = session.posargs or code_locations
-    install_only(session, linter)
-    run(session, linter, *args)
+    _install_only(session, linter)
+    _run(session, linter, *args)
 
 
 @nox.session(python=latest_python)
 def reformat(session: nox.Session) -> None:
     formatter = "black"
     args = session.posargs or code_locations
-    install_only(session, formatter)
-    run(session, formatter, *args)
+    _install_only(session, formatter)
+    _run(session, formatter, *args)
 
 
 @nox.session(python=latest_python)
@@ -66,16 +66,16 @@ def safety(session: nox.Session) -> None:
 def mypy(session: nox.Session) -> None:
     target = "mypy"
     args = session.posargs or code_locations
-    install_with(session, target)
-    run(session, target, *args)
+    _install_with(session, target)
+    _run(session, target, *args)
 
 
 @nox.session(python=python_versions_under_3_11)
 def pytype(session: nox.Session) -> None:
     target = "pytype"
     args = session.posargs or ["--disable=import-error", *code_locations]
-    install_with(session, target)
-    run(session, target, *args)
+    _install_with(session, target)
+    _run(session, target, *args)
 
 
 @nox.session(python=latest_python)
@@ -84,30 +84,30 @@ def typeguard(session: nox.Session) -> None:
     sub_target = "typeguard"
     args = session.posargs or ["-m", "not e2e"]
     args.append("--typeguard-packages=hypermodern_python")
-    install_with_multiple_groups(session, [target, sub_target])
-    run(session, target, *args)
+    _install_with_multiple_groups(session, [target, sub_target])
+    _run(session, target, *args)
 
 
 # everything after this line is utils
-def install_with_multiple_groups(session: nox.Session, groups: list[str]) -> None:
+def _install_with_multiple_groups(session: nox.Session, groups: list[str]) -> None:
     args: list[str] = []
     for group in groups:
         args.append("--with")
         args.append(group)
-    install(session, *args)
+    _install(session, *args)
 
 
-def install_with(session: nox.Session, group: str) -> None:
-    install(session, "--with", group)
+def _install_with(session: nox.Session, group: str) -> None:
+    _install(session, "--with", group)
 
 
-def install_only(session: nox.Session, group: str) -> None:
-    install(session, f"--only={group}")
+def _install_only(session: nox.Session, group: str) -> None:
+    _install(session, f"--only={group}")
 
 
-def install(session: nox.Session, *args: str) -> None:
+def _install(session: nox.Session, *args: str) -> None:
     session.run(runner, "install", *args, external=True)
 
 
-def run(session: nox.Session, target: str, *args: str) -> None:
+def _run(session: nox.Session, target: str, *args: str) -> None:
     session.run(runner, "run", target, *args, external=True)
