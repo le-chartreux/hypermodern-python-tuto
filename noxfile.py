@@ -1,3 +1,4 @@
+"""Nox sessions."""
 import tempfile
 
 import nox
@@ -16,6 +17,7 @@ runner = "poetry"
 
 @nox.session(python=python_versions)
 def tests(session: nox.Session) -> None:
+    """Run the test suite with pytest."""
     tester = "pytest"
     args = session.posargs or ["--cov", "-m", "not e2e"]
     _install_with(session, tester)
@@ -24,6 +26,7 @@ def tests(session: nox.Session) -> None:
 
 @nox.session(python=latest_python)
 def lint(session: nox.Session) -> None:
+    """Lint using flake8."""
     linter = "flake8"
     args = session.posargs or code_locations
     _install_only(session, linter)
@@ -32,6 +35,7 @@ def lint(session: nox.Session) -> None:
 
 @nox.session(python=latest_python)
 def reformat(session: nox.Session) -> None:
+    """Run black code formatter."""
     formatter = "black"
     args = session.posargs or code_locations
     _install_only(session, formatter)
@@ -40,6 +44,7 @@ def reformat(session: nox.Session) -> None:
 
 @nox.session(python=latest_python)
 def safety(session: nox.Session) -> None:
+    """Scan dependencies for insecure packages."""
     # not with poetry because it conflicts with blake
     # (+ since its safety there is no reason to not take the latest)
     with tempfile.NamedTemporaryFile() as requirements:
@@ -64,6 +69,7 @@ def safety(session: nox.Session) -> None:
 
 @nox.session(python=python_versions)
 def mypy(session: nox.Session) -> None:
+    """Static type-check using mypy."""
     target = "mypy"
     args = session.posargs or code_locations
     _install_with(session, target)
@@ -72,6 +78,7 @@ def mypy(session: nox.Session) -> None:
 
 @nox.session(python=python_versions_under_3_11)
 def pytype(session: nox.Session) -> None:
+    """Static type-check using pytype."""
     target = "pytype"
     args = session.posargs or ["--disable=import-error", *code_locations]
     _install_with(session, target)
@@ -80,6 +87,7 @@ def pytype(session: nox.Session) -> None:
 
 @nox.session(python=latest_python)
 def typeguard(session: nox.Session) -> None:
+    """Runtime type-check using typeguard."""
     target = "pytest"
     sub_target = "typeguard"
     args = session.posargs or ["-m", "not e2e"]
