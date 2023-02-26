@@ -1,33 +1,33 @@
 [flake8]
-# ANN: annotations (type annotations)
-# B & B9: bug-bear (bugs & design problems)
-# BLK: blake warnings (formatting)
-# C: McCabe (code complexity)
-# D: docstrings style
-# DAR: darglint (docstrings matches code)
-# E: pycodestyle (violation of PEP-8)
-# F: pyflakes (invalid Python code)
-# I: import order
-# S: Bandit (security)
-# W: pycodestyle (violation of PEP-8)
+# - ANN: annotations (type annotations)
+# - B & B9: bug-bear (bugs & design problems)
+# - BLK: blake warnings (formatting)
+# - C: McCabe (code complexity)
+# - D: docstrings style
+# - DAR: darglint (docstrings matches code)
+# - E: pycodestyle (violation of PEP-8)
+# - F: pyflakes (invalid Python code)
+# - I: import order
+# - S: Bandit (security)
+# - W: pycodestyle (violation of PEP-8)
 select = ANN,B,B9,BLK,C,D,DAR,E,F,I,S,W
 
-# ignore E203 and W503 to match blake standards
-# ignore E501 because bug-bear already set it with a tolerance of 10% (B9)
-# ignore ANN101 and ANN102 because is missing type annotation for self and cls
-# ignore ANN401 because it disallowed Any
+# - ignore E203 and W503 to match blake standards
+# - ignore E501 because bug-bear already set it with a tolerance of 10% (B9)
+# - ignore ANN101 and ANN102 because it's missing type annotation for self and cls (and hinting them all the time is useless)
+# - ignore ANN401 because it disallowed Any (and some elements should be Any when they are external)
 ignore = E203,E501,W503,ANN101,ANN102,ANN401
 
-# black
+# BLACK
 max-line-length = 88
 
-# bandit
+# BANDIT
 # disable warnings on asserts for tests
 per-file-ignores = test/*:S101
 
-# docstrings
+# DOCSTRINGS
 docstring-convention = google
 
-# import order
+# IMPORT ORDER
 application-import-names = hypermodern_python,test
 import-order-style = google
