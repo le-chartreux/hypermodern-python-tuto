@@ -6,6 +6,8 @@ from hypermodern_python.wikipedia.article import WikipediaArticle
 
 
 class WikipediaArticleSchema(marshmallow.Schema):
+    """Validator for WikipediaArticle."""
+
     title = marshmallow.fields.String(required=True)
     extract = marshmallow.fields.String(required=True, attribute="summary")
 

@@ -5,12 +5,24 @@ import os
 
 
 class Language(str, enum.Enum):
+    """Supported languages for the pages on the Wikipedia API (non-exhaustive)."""
+
     FRENCH = "french"
     ENGLISH = "english"
     OTHER = "other"
 
     @classmethod
     def from_preferences(cls) -> "Language":
+        """Searches for the preferred language in the computer's settings.
+
+        Since the computer settings vary a lot depending on the operating system,
+        this function works on posix and Windows only.
+
+        Returns: The preferred language.
+
+        Raises:
+            RuntimeError if the os name is not posix or Windows.
+        """
         if os.name == "posix":
             return cls._from_preferences_posix()
         elif os.name == "nt":
@@ -31,6 +43,18 @@ class Language(str, enum.Enum):
 
     @classmethod
     def from_str(cls, language: str) -> "Language":
+        """Converts a language name to its equivalent Enum.
+
+        Args:
+            language: The name of the language.
+
+        Returns:
+            The equivalent of the language in Enum.
+
+        Warnings:
+            Inaccurate because it works by looking for the beginning of the name,
+            e.g. "fresh" will be detected as FRENCH.
+        """
         language = language.lower()
         if language.startswith("fr"):
             return cls.FRENCH

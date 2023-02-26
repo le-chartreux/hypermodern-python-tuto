@@ -8,6 +8,8 @@ from hypermodern_python.wikipedia.language import Language
 
 
 class WikipediaRequester:
+    """Class to get information from Wikipedia."""
+
     def __init__(self) -> None:
         self.__base_url = (
             "https://{language}.wikipedia.org/api/rest_v1/page/random/summary"
@@ -35,6 +37,11 @@ class WikipediaRequester:
         return schema.load(article_dict)
 
     def set_language(self, language: Language) -> None:
+        """Specifies the desired language of Wikipedia.
+
+        Args:
+            language: the desired language of Wikipedia. Default is English.
+        """
         if language is Language.FRENCH:
             self.__language = "fr"
         else:
