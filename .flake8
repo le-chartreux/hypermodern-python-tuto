@@ -1,33 +1,57 @@
 [flake8]
-# - ANN: annotations (type annotations)
-# - B & B9: bug-bear (bugs & design problems)
-# - BLK: blake warnings (formatting)
-# - C: McCabe (code complexity)
-# - D: docstrings style
-# - DAR: darglint (docstrings matches code)
-# - E: pycodestyle (violation of PEP-8)
-# - F: pyflakes (invalid Python code)
-# - I: import order
-# - S: Bandit (security)
-# - W: pycodestyle (violation of PEP-8)
-select = ANN,B,B9,BLK,C,D,DAR,E,F,I,S,W
 
-# - ignore E203 and W503 to match blake standards
-# - ignore E501 because bug-bear already set it with a tolerance of 10% (B9)
-# - ignore ANN101 and ANN102 because it's missing type annotation for self and cls (and hinting them all the time is useless)
-# - ignore ANN401 because it disallowed Any (and some elements should be Any when they are external)
-ignore = E203,E501,W503,ANN101,ANN102,ANN401
+select =
+    # ANN: annotations (type annotations)
+    ANN,
+    # B: bug-bear (bugs & design problems)
+    B,
+    # B9: bug-bear strict (bugs & design problems)
+    B9,
+    # BLK: black warnings (formatting)
+    BLK,
+    # C: McCabe (code complexity)
+    C,
+    # D: docstrings (style)
+    D,
+    # DAR: darglint (docstrings matches code)
+    DAR,
+    # E: pycodestyle (violation of PEP-8)
+    E,
+    # F: pyflakes (invalid Python code)
+    F,
+    # I: import order
+    I,
+    # S: Bandit (security)
+    S,
+    # W: pycodestyle (violation of PEP-8)
+    W
 
-# BLACK
+ignore =
+    # E203: to match black standards
+    E203,
+    # W503: to match black standards
+    W503,
+    # E501: bug-bear already set it with a tolerance of 10% (B9)
+    E501,
+    # ANN101: missing type annotation for self, but hinting them all the time is useless
+    ANN101,
+    # ANN102: missing type annotation for cls but hinting them all the time is useless
+    ANN102,
+    # ANN401: it disallowed Any, but some elements should be Any when they are external
+    ANN401
+
 max-line-length = 88
 
-# BANDIT
-# disable warnings on asserts for tests
-per-file-ignores = test/*:S101
+per-file-ignores =
+    # asserts are OK for tests
+    test/*:S101
 
 # DOCSTRINGS
 docstring-convention = google
 
 # IMPORT ORDER
-application-import-names = hypermodern_python,test
+application-import-names =
+    # hypermodern_python and test are local packages, not third party
+    hypermodern_python,
+    test
 import-order-style = google
