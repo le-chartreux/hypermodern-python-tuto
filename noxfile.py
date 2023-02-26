@@ -3,7 +3,7 @@ import tempfile
 
 import nox
 
-nox.options.sessions = "lint", "tests", "safety", "mypy", "doctest"
+nox.options.sessions = "lint", "test", "safety", "mypy", "doctest"
 
 package_location = "./src/hypermodern_python"
 code_locations = package_location, "./test", "./noxfile.py"
@@ -17,7 +17,7 @@ runner = "poetry"
 
 
 @nox.session(python=python_versions)
-def tests(session: nox.Session) -> None:
+def test(session: nox.Session) -> None:
     """Run the test suite with pytest."""
     tester = "pytest"
     args = session.posargs or ["--cov", "-m", "not e2e"]
