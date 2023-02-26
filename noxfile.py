@@ -3,9 +3,10 @@ import tempfile
 
 import nox
 
-nox.options.sessions = "lint", "tests", "safety", "mypy"
+nox.options.sessions = "lint", "tests", "safety", "mypy", "doctest"
 
-code_locations = "src", "test", "./noxfile.py"
+package_location = "./src/hypermodern_python"
+code_locations = package_location, "./test", "./noxfile.py"
 python_versions = "3.10", "3.11"
 latest_python = python_versions[-1]
 python_versions_under_3_11 = [
@@ -89,10 +90,28 @@ def pytype(session: nox.Session) -> None:
 def typeguard(session: nox.Session) -> None:
     """Runtime type-check using typeguard (inside pytest)."""
     target = "pytest"
-    sub_target = "typeguard"
     args = session.posargs or ["-m", "not e2e"]
     args.append("--typeguard-packages=hypermodern_python")
-    _install_with_multiple_groups(session, [target, sub_target])
+    _install_with_multiple_groups(session, [target, "typeguard"])
+    _run(session, target, *args)
+
+
+@nox.session(python=python_versions)
+def doctest(session: nox.Session) -> None:
+    """Run doctests with pytest."""
+    target = "pytest"
+    args = session.posargs or [package_location]
+    args.append("--doctest-modules")
+    _install_with(session, target)
+    _run(session, target, *args)
+
+
+@nox.session(python=python_versions)
+def xdoctest(session: nox.Session) -> None:
+    """Run doctests with xdoctest."""
+    target = "xdoctest"
+    args = session.posargs or [package_location]
+    _install_with(session, target)
     _run(session, target, *args)
 
 
