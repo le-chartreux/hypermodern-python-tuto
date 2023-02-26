@@ -1,5 +1,3 @@
-import marshmallow
-
 from hypermodern_python.wikipedia.article import WikipediaArticle
 from hypermodern_python.wikipedia.article_schema import WikipediaArticleSchema
 
@@ -19,10 +17,7 @@ def test_load_simple() -> None:
 
 def test_load_with_unknown() -> None:
     schema = WikipediaArticleSchema()
-    article = schema.load(
-        {"title": title, "extract": extract, "something": "unwanted"},
-        unknown=marshmallow.EXCLUDE,
-    )
+    article = schema.load({"title": title, "extract": extract, "something": "unwanted"})
     check_article_correct(article)
 
 
