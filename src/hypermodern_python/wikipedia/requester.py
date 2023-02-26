@@ -1,4 +1,4 @@
-import typing
+from typing import Any
 
 import requests
 
@@ -20,7 +20,7 @@ class WikipediaRequester:
         article_dict = self._request_random_article_dict()
         return self._article_dict_to_article(article_dict)
 
-    def _request_random_article_dict(self) -> dict[typing.Any, typing.Any]:
+    def _request_random_article_dict(self) -> dict[Any, Any]:
         with requests.get(self._get_url()) as response:
             response.raise_for_status()
             article = response.json()
@@ -30,9 +30,7 @@ class WikipediaRequester:
         return self.__base_url.format(language=self.__language)
 
     @staticmethod
-    def _article_dict_to_article(
-        article_dict: dict[typing.Any, typing.Any]
-    ) -> WikipediaArticle:
+    def _article_dict_to_article(article_dict: dict[Any, Any]) -> WikipediaArticle:
         schema = WikipediaArticleSchema()
         return schema.load(article_dict)
 
