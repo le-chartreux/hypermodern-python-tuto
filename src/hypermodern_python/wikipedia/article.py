@@ -1,3 +1,4 @@
+"""WikipediaArticle class declaration."""
 import dataclasses
 
 

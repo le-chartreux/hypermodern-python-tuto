@@ -1,3 +1,4 @@
+"""WikipediaRequester class declaration."""
 from typing import Any
 
 import requests
@@ -11,12 +12,18 @@ class WikipediaRequester:
     """Class to get information from Wikipedia."""
 
     def __init__(self) -> None:
+        """Set up the WikipediaRequester."""
         self.__base_url = (
             "https://{language}.wikipedia.org/api/rest_v1/page/random/summary"
         )
         self.__language = "en"
 
     def get_random_article(self) -> WikipediaArticle:
+        """Query a random article from Wikipedia.
+
+        Returns:
+            A random article from Wikipedia (WikipediaArticle)
+        """
         article_dict = self._request_random_article_dict()
         return self._article_dict_to_article(article_dict)
 

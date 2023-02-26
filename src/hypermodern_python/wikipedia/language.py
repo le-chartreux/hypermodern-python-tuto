@@ -1,3 +1,4 @@
+"""Language enum declaration."""
 import ctypes
 import enum
 import locale

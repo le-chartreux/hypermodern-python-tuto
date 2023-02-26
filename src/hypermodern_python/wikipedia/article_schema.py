@@ -1,3 +1,4 @@
+"""WikipediaArticleSchema class declaration."""
 from typing import Any
 
 import marshmallow
@@ -13,7 +14,18 @@ class WikipediaArticleSchema(marshmallow.Schema):
 
     @marshmallow.post_load
     def make_article(self, data: dict[str, Any], **_kwargs: Any) -> WikipediaArticle:
+        """Creates a WikipediaArticle after the validation.
+
+        Args:
+            data: Validated data.
+            **_kwargs: Unused args
+
+        Returns:
+            An instance of WikipediaArticle from the validated data.
+        """
         return WikipediaArticle(**data)
 
     class Meta(marshmallow.schema.SchemaMeta):
+        """Meta-information for marshmallow."""
+
         unknown = marshmallow.EXCLUDE
