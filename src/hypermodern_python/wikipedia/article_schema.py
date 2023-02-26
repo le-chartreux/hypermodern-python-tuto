@@ -14,7 +14,7 @@ class WikipediaArticleSchema(marshmallow.Schema):
 
     @marshmallow.post_load
     def make_article(self, data: dict[str, Any], **_kwargs: Any) -> WikipediaArticle:
-        """Creates a WikipediaArticle after the validation.
+        """Create a WikipediaArticle after the validation.
 
         Args:
             data: Validated data.

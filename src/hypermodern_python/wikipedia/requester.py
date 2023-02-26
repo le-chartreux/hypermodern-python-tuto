@@ -42,7 +42,7 @@ class WikipediaRequester:
         return schema.load(article_dict)
 
     def set_language(self, language: Language) -> None:
-        """Specifies the desired language of Wikipedia.
+        """Specify the desired language of Wikipedia.
 
         Args:
             language: the desired language of Wikipedia. Default is English.

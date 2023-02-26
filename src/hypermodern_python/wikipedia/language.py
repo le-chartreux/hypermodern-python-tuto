@@ -14,7 +14,7 @@ class Language(str, enum.Enum):
 
     @classmethod
     def from_preferences(cls) -> "Language":
-        """Searches for the preferred language in the computer's settings.
+        """Search for the preferred language in the computer's settings.
 
         Since the computer settings vary a lot depending on the operating system,
         this function works on posix and Windows only.
@@ -45,7 +45,7 @@ class Language(str, enum.Enum):
 
     @classmethod
     def from_str(cls, language: str) -> "Language":
-        """Converts a language name to its equivalent Enum.
+        """Convert a language name to its equivalent Enum.
 
         Args:
             language: The name of the language.

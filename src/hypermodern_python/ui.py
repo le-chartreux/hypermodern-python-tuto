@@ -9,7 +9,7 @@ import hypermodern_python.wikipedia.article
 def print_wikipedia_article(
     wikipedia_article: hypermodern_python.wikipedia.article.WikipediaArticle,
 ) -> None:
-    """Shows an article to the standard text output.
+    """Show an article on the standard text output.
 
     Prints in green the title, followed by the summary.
 

@@ -20,7 +20,7 @@ import hypermodern_python.wikipedia.requester
     default=hypermodern_python.wikipedia.language.Language.from_preferences(),
 )
 def main(language: hypermodern_python.wikipedia.language.Language) -> None:
-    """Displays the title and the summary of a random Wikipedia article."""
+    """Display the title and the summary of a random Wikipedia article."""
     wikipedia_requester = hypermodern_python.wikipedia.requester.WikipediaRequester()
     wikipedia_requester.set_language(language)
     try:
