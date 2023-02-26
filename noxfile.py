@@ -26,7 +26,7 @@ def tests(session: nox.Session) -> None:
 
 @nox.session(python=latest_python)
 def lint(session: nox.Session) -> None:
-    """Lint using flake8."""
+    """Lint with flake8."""
     linter = "flake8"
     args = session.posargs or code_locations
     _install_only(session, linter)
@@ -35,7 +35,7 @@ def lint(session: nox.Session) -> None:
 
 @nox.session(python=latest_python)
 def reformat(session: nox.Session) -> None:
-    """Run black code formatter."""
+    """Reformat with black."""
     formatter = "black"
     args = session.posargs or code_locations
     _install_only(session, formatter)
@@ -45,8 +45,8 @@ def reformat(session: nox.Session) -> None:
 @nox.session(python=latest_python)
 def safety(session: nox.Session) -> None:
     """Scan dependencies for insecure packages."""
-    # not with poetry because it conflicts with blake
-    # (+ since its safety there is no reason to not take the latest)
+    # not within poetry because it conflicts with black
+    # (and since its safety there is no reason to not use the latest)
     with tempfile.NamedTemporaryFile() as requirements:
         session.run(
             runner,
@@ -87,7 +87,7 @@ def pytype(session: nox.Session) -> None:
 
 @nox.session(python=latest_python)
 def typeguard(session: nox.Session) -> None:
-    """Runtime type-check using typeguard."""
+    """Runtime type-check using typeguard (inside pytest)."""
     target = "pytest"
     sub_target = "typeguard"
     args = session.posargs or ["-m", "not e2e"]
