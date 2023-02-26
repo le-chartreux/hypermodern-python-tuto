@@ -19,10 +19,11 @@ class Language(str, enum.Enum):
         Since the computer settings vary a lot depending on the operating system,
         this function works on posix and Windows only.
 
-        Returns: The preferred language.
+        Returns:
+            The preferred language.
 
         Raises:
-            RuntimeError if the os name is not posix or Windows.
+            RuntimeError: If the os name is not posix or Windows.
         """
         if os.name == "posix":
             return cls._from_preferences_posix()

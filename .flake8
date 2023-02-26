@@ -7,8 +7,9 @@
 # B & B9: bug-bear (bugs & design problems)
 # S: Bandit (security)
 # ANN: annotations (type annotations)
-# D: docstrings
-select = F,W,E,C,BLK,I,B,B9,S,ANN,D
+# D: docstrings style
+# DAR: darglint (docstrings matches code)
+select = F,W,E,C,BLK,I,B,B9,S,ANN,D,DAR
 # ignore E203 and W503 to match blake standards
 # ignore E501 because bug-bear already set it with a tolerance of 10% (B9)
 # ignore ANN101 and ANN102 because is missing type annotation for self and cls
