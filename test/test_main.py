@@ -13,28 +13,28 @@ def runner() -> click.testing.CliRunner:
 
 
 def test_main_succeeds(
-    runner: click.testing.CliRunner, mock_requests_get: unittest.mock.MagicMock
+    runner: click.testing.CliRunner, mock_requests_get: unittest.mock.Mock
 ) -> None:
     result = runner.invoke(main)
     assert result.exit_code == 0
 
 
 def test_main_prints_title(
-    runner: click.testing.CliRunner, mock_requests_get: unittest.mock.MagicMock
+    runner: click.testing.CliRunner, mock_requests_get: unittest.mock.Mock
 ) -> None:
     result = runner.invoke(main)
     assert "Lorem Ipsum" in result.output
 
 
 def test_main_invokes_requests_get(
-    runner: click.testing.CliRunner, mock_requests_get: unittest.mock.MagicMock
+    runner: click.testing.CliRunner, mock_requests_get: unittest.mock.Mock
 ) -> None:
     runner.invoke(main)
     assert mock_requests_get.called
 
 
 def test_main_uses_correct_wikipedia_for_language(
-    runner: click.testing.CliRunner, mock_requests_get: unittest.mock.MagicMock
+    runner: click.testing.CliRunner, mock_requests_get: unittest.mock.Mock
 ) -> None:
     expected_url_and_arg_to_use = (
         ("en.wikipedia.org", "--language english"),
@@ -49,7 +49,7 @@ def test_main_uses_correct_wikipedia_for_language(
 
 
 def test_main_prints_message_on_request_error(
-    runner: click.testing.CliRunner, mock_requests_get
+    runner: click.testing.CliRunner, mock_requests_get: unittest.mock.Mock
 ) -> None:
     mock_requests_get.side_effect = requests.RequestException
     result = runner.invoke(main)

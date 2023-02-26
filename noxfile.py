@@ -105,9 +105,9 @@ def install_only(session: nox.Session, group: str) -> None:
     install(session, f"--only={group}")
 
 
-def install(session: nox.Session, *args) -> None:
+def install(session: nox.Session, *args: str) -> None:
     session.run(runner, "install", *args, external=True)
 
 
-def run(session: nox.Session, target: str, *args) -> None:
+def run(session: nox.Session, target: str, *args: str) -> None:
     session.run(runner, "run", target, *args, external=True)
