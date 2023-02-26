@@ -19,9 +19,15 @@ def test_from_preferences_os_posix(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 def test_from_preferences_os_windows(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(os, "name", "windows")
+    monkeypatch.setattr(os, "name", "nt")
     monkeypatch.setattr(Language, "_from_preferences_windows", lambda: Language.FRENCH)
     assert Language.from_preferences() == Language.FRENCH
+
+
+def test_from_preferences_os_unsupported(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(os, "name", "unsupported")
+    with pytest.raises(RuntimeError):
+        assert Language.from_preferences() == Language.FRENCH
 
 
 def test_from_preferences_posix(monkeypatch: pytest.MonkeyPatch) -> None:
