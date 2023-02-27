@@ -4,6 +4,7 @@ import tempfile
 import nox
 
 nox.options.sessions = "lint", "test", "safety", "mypy", "doctest"
+nox.options.reuse_existing_virtualenvs = True
 
 package_location = "./src/hypermodern_python"
 code_locations = package_location, "./test", "./noxfile.py"
