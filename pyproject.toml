@@ -18,6 +18,9 @@ marshmallow = "^3.19.0"
 [tool.poetry.scripts]
 hypermodern-python = "hypermodern_python.__main__:main"
 
+[tool.poetry.group.dev.dependencies]
+nox = "^2022.11.21"
+
 [tool.poetry.group.flake8.dependencies]
 flake8 = "^6.0.0"
 flake8-bandit = "^4.1.1"
