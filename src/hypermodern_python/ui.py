@@ -15,6 +15,12 @@ def print_wikipedia_article(
 
     Args:
         wikipedia_article: the article to print.
+
+    Examples:
+        >>> article = hypermodern_python.wikipedia.article.WikipediaArticle("a", "b")
+        >>> print_wikipedia_article(article)
+        a
+        b
     """
     click.secho(wikipedia_article.title, fg="green")
     click.echo(textwrap.fill(wikipedia_article.summary))

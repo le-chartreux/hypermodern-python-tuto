@@ -24,6 +24,10 @@ class Language(str, enum.Enum):
 
         Raises:
             RuntimeError: If the os name is not posix or Windows.
+
+        Examples:
+            >>> isinstance(Language.from_preferences(), Language)
+            True
         """
         if os.name == "posix":
             return cls._from_preferences_posix()
@@ -56,6 +60,14 @@ class Language(str, enum.Enum):
         Warnings:
             Inaccurate because it works by looking for the beginning of the name,
             e.g. "fresh" will be detected as FRENCH.
+
+        Examples:
+            >>> Language.from_str("french") is Language.FRENCH
+            True
+            >>> Language.from_str("en") is Language.ENGLISH
+            True
+            >>> Language.from_str("unrecognized") is Language.OTHER
+            True
         """
         language = language.lower()
         if language.startswith("fr"):
