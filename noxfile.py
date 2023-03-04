@@ -31,7 +31,7 @@ def lint(session: nox.Session) -> None:
     """Lint with flake8."""
     linter = "flake8"
     args = session.posargs or code_locations
-    _install_only(session, linter)
+    _install_with(session, linter)
     _run(session, linter, *args)
 
 

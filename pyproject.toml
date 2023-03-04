@@ -21,6 +21,9 @@ hypermodern-python = "hypermodern_python.__main__:main"
 [tool.poetry.group.dev.dependencies]
 nox = "^2022.11.21"
 
+[tool.poetry.group.flake8]
+optional = true
+
 [tool.poetry.group.flake8.dependencies]
 flake8 = "^6.0.0"
 flake8-bandit = "^4.1.1"
@@ -31,8 +34,14 @@ flake8-annotations = "^3.0.0"
 flake8-docstrings = "^1.7.0"
 darglint = "^1.8.1"
 
+[tool.poetry.group.black]
+optional = true
+
 [tool.poetry.group.black.dependencies]
 black = "^23.1.0"
+
+[tool.poetry.group.mypy]
+optional = true
 
 [tool.poetry.group.mypy.dependencies]
 mypy = "^1.0.1"
@@ -46,10 +55,14 @@ pytest-mock = "^3.10.0"
 xdoctest = "^1.1.1"
 pygments = "^2.14.0"
 
+[tool.poetry.group.pytype]
+optional = true
 
 [tool.poetry.group.pytype.dependencies]
 pytype = {version = "^2023.2.17", python = "~3.10"}
 
+[tool.poetry.group.typeguard]
+optional = true
 
 [tool.poetry.group.typeguard.dependencies]
 typeguard = "^2.13.3"
