@@ -26,7 +26,8 @@ class Language(str, enum.Enum):
             RuntimeError: If the os name is not posix or Windows.
 
         Examples:
-            >>> isinstance(Language.from_preferences(), Language)
+            >>> language = Language.from_preferences()
+            >>> isinstance(language, Language)
             True
         """
         if os.name == "posix":
