@@ -116,6 +116,14 @@ def xdoctest(session: nox.Session) -> None:
     _run(session, target, *args)
 
 
+@nox.session(python=latest_python)
+def docs(session: nox.Session) -> None:
+    """Build the documentation."""
+    builder = "sphinx-build"
+    _install_with(session, "docs")
+    _run(session, builder, "docs", "docs/_build")
+
+
 # everything after this line is utils
 def _install_with_multiple_groups(session: nox.Session, groups: list[str]) -> None:
     args: list[str] = []
