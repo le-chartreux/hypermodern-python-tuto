@@ -6,6 +6,7 @@ The Hypermodern Python Project
    :maxdepth: 1
 
    license
+   reference
 
 
 The example project for the

@@ -55,6 +55,10 @@ typeguard = "^2.13.3"
 [tool.poetry.group.docs.dependencies]
 sphinx = "^6.1.3"
 
+
+[tool.poetry.group.sphinx.dependencies]
+sphinx-autodoc-typehints = "^1.22"
+
 [tool.coverage.paths]
 source = ["src"]
 

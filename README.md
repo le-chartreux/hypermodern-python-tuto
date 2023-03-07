@@ -93,6 +93,9 @@ Tools that can be used in every Python project, no matter its content.
 #### Documentation
 
 - [Sphinx](https://www.sphinx-doc.org/en/master/), the documentation tool used by the official Python documentation.
+- [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html), Sphinx official plugin to generate API documentation from the docstrings.
+- [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html), Sphinx official plugin to allow compatibility with Google-style docstrings.
+- [sphinx-autodoc-typehints](https://pypi.org/project/sphinx-autodoc-typehints/), Sphinx plugin to detect type hints in generated documentation.
 
 ### Specific Python tools
 
