@@ -81,6 +81,10 @@ Tools that can be used in every Python project, no matter its content.
 - [pytype](https://google.github.io/pytype/), a static type checker
 - [typeguard](https://typeguard.readthedocs.io/en/latest/), a runtime type check
 
+#### Documentation
+
+- [Sphinx](https://www.sphinx-doc.org/en/master/), the documentation tool used by the official Python documentation.
+
 ### Specific Python tools
 
 Tools to match specific needs of the projet.
