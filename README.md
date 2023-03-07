@@ -5,14 +5,23 @@ Repo to follow the Claudio Jolowicz's [tutorial about Hypermodern Python](https:
 ## Table of contents
 
 - [Description of the application](#description-of-the-application)
-- [Installation](#install)
+- [Install](#install)
 - [Use](#use)
 - [Tools used](#tools-used)
   - [Generic tools](#generic-tools)
   - [Generic Python tools](#generic-python-tools)
+    - [Multi-purpose](#multi-purpose)
     - [Setup](#setup)
     - [Test](#test)
+    - [Linting](#linting)
+    - [Security](#security)
+    - [Formatting](#formatting)
+    - [Type checking](#type-checking)
+    - [Documentation](#documentation)
   - [Specific Python tools](#specific-python-tools)
+    - [UI](#ui)
+    - [Communication](#communication)
+    - [Data validation](#data-validation)
 
 ## Description of the application
 
