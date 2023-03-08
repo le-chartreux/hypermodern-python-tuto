@@ -2,6 +2,8 @@
 
 Repo to follow the Claudio Jolowicz's [tutorial about Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/).
 
+[![Tests](https://github.com/le-chartreux/hypermodern-python-tuto/workflows/Tests/badge.svg)](https://github.com/le-chartreux/hypermodern-python-tuto/actions?workflow=Tests)
+
 ## Table of contents
 
 - [Description of the application](#description-of-the-application)
