@@ -1,5 +1,4 @@
 name: nox tests
-run-name: ${{ github.actor }} is running ${{ github.action }}
 on: push
 jobs:
   tests:
