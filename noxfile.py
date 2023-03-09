@@ -20,19 +20,17 @@ runner = "poetry"
 @nox.session(python=python_versions)
 def test(session: nox.Session) -> None:
     """Run the test suite with pytest."""
-    tester = "pytest"
     args = session.posargs or ["--cov", "-m", "not e2e"]
-    _install_with(session, tester)
-    _run(session, tester, *args)
+    _install(session)
+    _run(session, "pytest", *args)
 
 
 @nox.session(python=latest_python)
 def lint(session: nox.Session) -> None:
     """Lint with flake8."""
-    linter = "flake8"
     args = session.posargs or code_locations
-    _install_with(session, linter)
-    _run(session, linter, *args)
+    _install(session)
+    _run(session, "flake8", *args)
 
 
 @nox.session(python=latest_python)
@@ -72,69 +70,53 @@ def safety(session: nox.Session) -> None:
 @nox.session(python=python_versions)
 def mypy(session: nox.Session) -> None:
     """Static type-check using mypy."""
-    type_checker = "mypy"
     args = session.posargs or code_locations
-    _install_with(session, type_checker)
-    _run(session, type_checker, *args)
+    _install(session)
+    _run(session, "mypy", *args)
 
 
 @nox.session(python=python_versions_under_3_11)
 def pytype(session: nox.Session) -> None:
     """Static type-check using pytype."""
-    type_checker = "pytype"
     args = session.posargs or ["--disable=import-error", *code_locations]
-    _install_with(session, type_checker)
-    _run(session, type_checker, *args)
+    _install(session)
+    _run(session, "pytype", *args)
 
 
 @nox.session(python=latest_python)
 def typeguard(session: nox.Session) -> None:
     """Runtime type-check using typeguard (inside pytest)."""
-    target = "pytest"
     args = session.posargs or ["-m", "not e2e"]
     args.append("--typeguard-packages=hypermodern_python")
-    _install_with_multiple_groups(session, [target, "typeguard"])
-    _run(session, target, *args)
+    _install(session)
+    _run(session, "pytest", *args)
 
 
 @nox.session(python=python_versions)
 def doctest(session: nox.Session) -> None:
     """Run doctests with pytest."""
-    target = "pytest"
     args = session.posargs or [package_location]
     args.append("--doctest-modules")
-    _install_with(session, target)
-    _run(session, target, *args)
+    _install(session)
+    _run(session, "pytest", *args)
 
 
 @nox.session(python=python_versions)
 def xdoctest(session: nox.Session) -> None:
     """Run doctests with xdoctest."""
-    target = "xdoctest"
     args = session.posargs or [package_location]
-    _install_with(session, target)
-    _run(session, target, *args)
+    _install(session)
+    _run(session, "xdoctest", *args)
 
 
 @nox.session(python=latest_python)
 def docs(session: nox.Session) -> None:
     """Build the documentation."""
-    builder = "sphinx-build"
-    _install_with(session, "docs")
-    _run(session, builder, "docs", "docs/_build")
+    _install(session)
+    _run(session, "sphinx-build", "docs", "docs/_build")
 
 
 # everything after this line is utils
-def _install_with_multiple_groups(session: nox.Session, groups: list[str]) -> None:
-    args: list[str] = []
-    for group in groups:
-        args.append("--with")
-        args.append(group)
-    _install(session, *args)
-
-
-def _install_with(session: nox.Session, group: str) -> None:
-    _install(session, "--with", group)
 
 
 def _install_only(session: nox.Session, group: str) -> None:
