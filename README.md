@@ -44,8 +44,9 @@ TODO
 Tools that can be used in every development project, no matter if it's a Python project or not.
 
 - [git](https://git-scm.com/), to manage versions of the source code
-- [GitHub](https://github.com/le-chartreux/hypermodern-python-tuto), to host the git repository
+- [GitHub](https://github.com/le-chartreux/hypermodern-python-tuto), to host the git repository and execute Actions
 - [pre-commit](https://pre-commit.com/), to manage pre-commit hooks
+- [Codecov](https://about.codecov.io/), to mesure code coverage on repos
 
 ### Generic Python tools
 
