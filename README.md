@@ -4,6 +4,7 @@ Repo to follow the Claudio Jolowicz's [tutorial about Hypermodern Python](https:
 
 [![Tests](https://github.com/le-chartreux/hypermodern-python-tuto/workflows/Tests/badge.svg)](https://github.com/le-chartreux/hypermodern-python-tuto/actions?workflow=Tests)
 [![Codecov](https://codecov.io/gh/le-chartreux/hypermodern-python-tuto/branch/master/graph/badge.svg)](https://codecov.io/gh/le-chartreux/hypermodern-python-tuto)
+[![PyPI](https://img.shields.io/pypi/v/hypermodern-python-tuto.svg)](https://pypi.org/project/hypermodern-python-tuto/)
 
 ## Table of contents
 
@@ -48,6 +49,7 @@ Tools that can be used in every development project, no matter if it's a Python 
 - [GitHub](https://github.com/le-chartreux/hypermodern-python-tuto), to host the git repository and execute Actions
 - [pre-commit](https://pre-commit.com/), to manage pre-commit hooks
 - [Codecov](https://about.codecov.io/), to mesure code coverage on repos
+- [PyPI](https://pypi.org/), to publish packages
 
 ### Generic Python tools
 
