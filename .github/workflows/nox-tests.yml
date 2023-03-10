@@ -12,6 +12,9 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-    - run: pip install nox==2022.11.21
-    - run: pip install poetry==1.3.2
-    - run: nox --pythons ${{ matrix.python-version }}
+    - name: install nox
+      run: pip install nox==2022.11.21
+    - name: install poetry
+      run: pip install poetry==1.3.2
+    - name: run nox
+      run: nox --pythons ${{ matrix.python-version }}
