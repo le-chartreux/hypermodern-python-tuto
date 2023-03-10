@@ -116,6 +116,20 @@ def docs(session: nox.Session) -> None:
     _run(session, "sphinx-build", "docs", "docs/_build")
 
 
+@nox.session(python=latest_python)
+def coverage(session: nox.Session) -> None:
+    """Upload coverage data."""
+    args = session.posargs or [
+        "--cov",
+        "-m",
+        "not e2e",
+        "--cov-report=xml",
+        "--cov-fail-under=0",
+    ]
+    _install(session)
+    _run(session, "pytest", *args)
+
+
 # everything after this line is utils
 
 
