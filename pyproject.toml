@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hypermodern-python-tuto"
-version = "0.1.0"
+version = "0.1.1"
 description = "Repo to follow the Claudio Jolowicz's tutorial about Hypermodern Python (https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)"
 authors = ["le-chartreux <le-chartreux-vert@protonmail.com>"]
 readme = "README.md"
