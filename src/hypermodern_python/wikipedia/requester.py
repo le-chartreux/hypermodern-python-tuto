@@ -34,7 +34,7 @@ class WikipediaRequester:
         return self._article_dict_to_article(article_dict)
 
     def _request_random_article_dict(self) -> dict[Any, Any]:
-        with requests.get(self._get_url()) as response:
+        with requests.get(self._get_url(), timeout=5) as response:
             response.raise_for_status()
             article = response.json()
         return article
