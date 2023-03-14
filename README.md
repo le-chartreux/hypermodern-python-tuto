@@ -46,10 +46,10 @@ TODO
 Tools that can be used in every development project, no matter if it's a Python project or not.
 
 - [git](https://git-scm.com/), to manage versions of the source code
-- [GitHub](https://github.com/le-chartreux/hypermodern-python-tuto), to host the git repository and execute Actions
+- [GitHub](https://github.com/le-chartreux/hypermodern-python-tuto), to host the git repository and automate tasks with [GitHub Actions](https://docs.github.com/en/actions):
+  - [Release Drafter](https://github.com/marketplace/actions/release-drafter), to create release templates
 - [pre-commit](https://pre-commit.com/), to manage pre-commit hooks
 - [Codecov](https://about.codecov.io/), to mesure code coverage on repos
-- [PyPI](https://pypi.org/), to publish packages
 
 ### Generic Python tools
 
@@ -57,6 +57,7 @@ Tools that can be used in every Python project, no matter its content.
 
 #### Multi-purpose
 
+- [PyPI](https://pypi.org/), to install and publish Python packages
 - [poetry](https://python-poetry.org/), to make development and distribution easy (packaging, virtualization, dependencies, launching and publishing)
 - [nox](https://nox.thea.codes/en/stable/), to run tasks in multiple Python environments (like tests, linting, reformatting, etc.)
 
