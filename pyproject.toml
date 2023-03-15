@@ -2,6 +2,7 @@
 name = "hypermodern-python-tuto"
 version = "0.6.2"
 description = "Repo to follow the Claudio Jolowicz's tutorial about Hypermodern Python (https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)"
+documentation = "https://hypermodern-python-tuto.readthedocs.io"
 authors = ["le-chartreux <le-chartreux-vert@protonmail.com>"]
 readme = "README.md"
 packages = [{include = "hypermodern_python_tuto", from = "src"}]
@@ -54,9 +55,6 @@ typeguard = "^2.13.3"
 
 [tool.poetry.group.docs.dependencies]
 sphinx = "^6.1.3"
-
-
-[tool.poetry.group.sphinx.dependencies]
 sphinx-autodoc-typehints = "^1.22"
 
 [tool.coverage.paths]

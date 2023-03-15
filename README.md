@@ -5,6 +5,7 @@ Repo to follow the Claudio Jolowicz's [tutorial about Hypermodern Python](https:
 [![Tests](https://github.com/le-chartreux/hypermodern-python-tuto/workflows/Tests/badge.svg)](https://github.com/le-chartreux/hypermodern-python-tuto/actions?workflow=Tests)
 [![Codecov](https://codecov.io/gh/le-chartreux/hypermodern-python-tuto/branch/master/graph/badge.svg)](https://codecov.io/gh/le-chartreux/hypermodern-python-tuto)
 [![PyPI](https://img.shields.io/pypi/v/hypermodern-python-tuto.svg)](https://pypi.org/project/hypermodern-python-tuto/)
+[![Read the Docs](https://readthedocs.org/projects/hypermodern-python-tuto/badge/)](https://hypermodern-python-tuto.readthedocs.io/)
 
 ## Table of contents
 
