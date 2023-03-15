@@ -1,5 +1,5 @@
 """Sphinx configuration."""
-project = "hypermodern-python"
+project = "hypermodern-python-tuto"
 author = "Nathan Rousseau"
 copyright = f"2023, {author}"
 extensions = [

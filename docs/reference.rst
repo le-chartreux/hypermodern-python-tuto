@@ -6,43 +6,43 @@ Reference
     :backlinks: none
 
 
-hypermodern_python.__main__
----------------------------
+hypermodern_python_tuto.__main__
+--------------------------------
 
-.. automodule:: hypermodern_python.__main__
+.. automodule:: hypermodern_python_tuto.__main__
    :members:
 
 
-hypermodern_python.ui
+hypermodern_python_tuto.ui
 ----------------------------
 
-.. automodule:: hypermodern_python.ui
+.. automodule:: hypermodern_python_tuto.ui
    :members:
 
 
-hypermodern_python.wikipedia.article
-------------------------------------
+hypermodern_python_tuto.wikipedia.article
+-----------------------------------------
 
-.. automodule:: hypermodern_python.wikipedia.article
+.. automodule:: hypermodern_python_tuto.wikipedia.article
    :members:
 
 
-hypermodern_python.wikipedia.article_schema
+hypermodern_python_tuto.wikipedia.article_schema
+------------------------------------------------
+
+.. automodule:: hypermodern_python_tuto.wikipedia.article_schema
+   :members:
+
+
+hypermodern_python_tuto.wikipedia.language
+------------------------------------------
+
+.. automodule:: hypermodern_python_tuto.wikipedia.language
+   :members:
+
+
+hypermodern_python_tuto.wikipedia.requester
 -------------------------------------------
 
-.. automodule:: hypermodern_python.wikipedia.article_schema
-   :members:
-
-
-hypermodern_python.wikipedia.language
--------------------------------------------
-
-.. automodule:: hypermodern_python.wikipedia.language
-   :members:
-
-
-hypermodern_python.wikipedia.requester
--------------------------------------------
-
-.. automodule:: hypermodern_python.wikipedia.requester
+.. automodule:: hypermodern_python_tuto.wikipedia.requester
    :members:

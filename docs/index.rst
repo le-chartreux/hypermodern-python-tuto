@@ -34,7 +34,7 @@ Hypermodern Python's usage looks like:
 
 .. code-block:: console
 
-   $ hypermodern-python [OPTIONS]
+   $ hypermodern-python-tuto [OPTIONS]
 
 .. option:: --language [french|english|other]
 
