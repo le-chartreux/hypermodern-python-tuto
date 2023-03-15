@@ -19,7 +19,7 @@ jobs:
         pip install --upgrade pip
         pip install poetry==1.3.2
     - name: setting the version to <version>.dev.<timestamp>
-    - run: >-
+      run: >-
         poetry version patch &&
         version=$(poetry version | awk '{print $2}') &&
         poetry version $version.dev.$(date +%s)
