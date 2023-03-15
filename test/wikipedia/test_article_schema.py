@@ -1,6 +1,6 @@
 """Test cases for the ArticleSchema module."""
-from hypermodern_python.wikipedia.article import WikipediaArticle
-from hypermodern_python.wikipedia.article_schema import WikipediaArticleSchema
+from hypermodern_python_tuto.wikipedia.article import WikipediaArticle
+from hypermodern_python_tuto.wikipedia.article_schema import WikipediaArticleSchema
 
 title = "lorem"
 extract = "ipsum"

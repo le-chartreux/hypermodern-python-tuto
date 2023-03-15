@@ -3,9 +3,9 @@ from typing import Any
 
 import requests
 
-from hypermodern_python.wikipedia.article import WikipediaArticle
-from hypermodern_python.wikipedia.article_schema import WikipediaArticleSchema
-from hypermodern_python.wikipedia.language import Language
+from hypermodern_python_tuto.wikipedia.article import WikipediaArticle
+from hypermodern_python_tuto.wikipedia.article_schema import WikipediaArticleSchema
+from hypermodern_python_tuto.wikipedia.language import Language
 
 
 class WikipediaRequester:

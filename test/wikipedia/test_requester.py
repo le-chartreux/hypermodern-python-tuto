@@ -4,8 +4,8 @@ import unittest.mock
 import marshmallow
 import pytest
 
-from hypermodern_python.wikipedia.language import Language
-from hypermodern_python.wikipedia.requester import WikipediaRequester
+from hypermodern_python_tuto.wikipedia.language import Language
+from hypermodern_python_tuto.wikipedia.requester import WikipediaRequester
 
 
 def test_random_page_uses_given_language(mock_requests_get: unittest.mock.Mock) -> None:

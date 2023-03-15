@@ -5,7 +5,7 @@ import click.testing
 import pytest
 import requests
 
-from hypermodern_python.__main__ import main
+from hypermodern_python_tuto.__main__ import main
 
 
 @pytest.fixture

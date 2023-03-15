@@ -3,7 +3,7 @@ from typing import Any
 
 import marshmallow
 
-from hypermodern_python.wikipedia.article import WikipediaArticle
+from hypermodern_python_tuto.wikipedia.article import WikipediaArticle
 
 
 class WikipediaArticleSchema(marshmallow.Schema):

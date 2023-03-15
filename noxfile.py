@@ -6,7 +6,7 @@ import nox
 nox.options.sessions = "lint", "test", "safety", "mypy", "doctest"
 nox.options.reuse_existing_virtualenvs = True
 
-package_location = "./src/hypermodern_python"
+package_location = "./src/hypermodern_python_tuto"
 code_locations = package_location, "./test", "./noxfile.py"
 python_versions = "3.10", "3.11"
 latest_python = python_versions[-1]
@@ -87,7 +87,7 @@ def pytype(session: nox.Session) -> None:
 def typeguard(session: nox.Session) -> None:
     """Runtime type-check using typeguard (inside pytest)."""
     args = session.posargs or ["-m", "not e2e"]
-    args.append("--typeguard-packages=hypermodern_python")
+    args.append("--typeguard-packages=hypermodern_python_tuto")
     _install(session)
     _run(session, "pytest", *args)
 

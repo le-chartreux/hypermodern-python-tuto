@@ -1,5 +1,5 @@
 """Test cases for the article module."""
-from hypermodern_python.wikipedia.article import WikipediaArticle
+from hypermodern_python_tuto.wikipedia.article import WikipediaArticle
 
 
 def test_init() -> None:

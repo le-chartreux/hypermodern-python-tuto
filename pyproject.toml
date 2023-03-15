@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "hypermodern-python-tuto"
-version = "0.1.1"
+version = "0.6.2"
 description = "Repo to follow the Claudio Jolowicz's tutorial about Hypermodern Python (https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)"
 authors = ["le-chartreux <le-chartreux-vert@protonmail.com>"]
 readme = "README.md"
-packages = [{include = "hypermodern_python", from = "src"}]
+packages = [{include = "hypermodern_python_tuto", from = "src"}]
 license = "MIT"
 repository = "https://github.com/le-chartreux/hypermodern-python-tuto"
 keywords = ["hypermodern"]
@@ -16,7 +16,7 @@ requests = "^2.28.2"
 marshmallow = "^3.19.0"
 
 [tool.poetry.scripts]
-hypermodern-python = "hypermodern_python.__main__:main"
+hypermodern-python-tuto = "hypermodern_python_tuto.__main__:main"
 
 [tool.poetry.group.dev.dependencies]
 nox = "^2022.11.21"
@@ -64,7 +64,7 @@ source = ["src"]
 
 [tool.coverage.run]
 branch = true
-source = ["hypermodern_python"]
+source = ["hypermodern_python_tuto"]
 
 [tool.coverage.report]
 show_missing = true
