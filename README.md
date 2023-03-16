@@ -2,10 +2,57 @@
 
 Repo to follow the Claudio Jolowicz's [tutorial about Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/).
 
-[![Tests](https://github.com/le-chartreux/hypermodern-python-tuto/workflows/Tests/badge.svg)](https://github.com/le-chartreux/hypermodern-python-tuto/actions?workflow=Tests)
-[![Codecov](https://codecov.io/gh/le-chartreux/hypermodern-python-tuto/branch/master/graph/badge.svg)](https://codecov.io/gh/le-chartreux/hypermodern-python-tuto)
-[![PyPI](https://img.shields.io/pypi/v/hypermodern-python-tuto.svg)](https://pypi.org/project/hypermodern-python-tuto/)
-[![Read the Docs](https://readthedocs.org/projects/hypermodern-python-tuto/badge/)](https://hypermodern-python-tuto.readthedocs.io/)
+---
+
+<table>
+    <tr>
+        <td>
+            <b>Package</b>
+        </td>
+        <td>
+            <a href="https://pypi.org/project/hypermodern-python-tuto/">
+                <img src="https://img.shields.io/pypi/pyversions/hypermodern-python-tuto.svg" alt="Supported Python Versions">
+            </a>
+            <a href="https://pypi.org/project/hypermodern-python-tuto/">
+                <img src="https://img.shields.io/pypi/v/hypermodern-python-tuto.svg" alt="PyPI version">
+            </a>
+            <a href="https://pypi.org/project/hypermodern-python-tuto/">
+                <img src="https://img.shields.io/pypi/dm/hypermodern-python-tuto.svg" alt="PyPI downloads">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>CI</b>
+        </td>
+        <td>
+            <a href="https://github.com/le-chartreux/hypermodern-python-tuto/actions?workflow=Tests">
+                <img src="https://github.com/le-chartreux/hypermodern-python-tuto/workflows/Tests/badge.svg" alt="Tests status">
+            </a>
+            <a href="https://hypermodern-python-tuto.readthedocs.io/">
+                <img src="https://readthedocs.org/projects/hypermodern-python-tuto/badge/" alt="Documentation status">
+            </a>
+            <a href="https://codecov.io/gh/le-chartreux/hypermodern-python-tuto">
+                <img src="https://codecov.io/gh/le-chartreux/hypermodern-python-tuto/branch/master/graph/badge.svg" alt="Coverage status">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Code</b>
+        </td>
+        <td>
+            <a href="https://github.com/psf/black">
+                <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code quality">
+            </a>
+            <a href="https://github.com/pre-commit/pre-commit">
+                <img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen" alt="pre-commit">
+            </a>
+        </td>
+    </tr>
+</table>
+
+---
 
 ## Table of contents
 
