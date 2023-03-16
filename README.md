@@ -81,7 +81,9 @@ The app created is a CLI application that queries a random Wikipedia page and di
 
 ## Install
 
-TODO
+```shell
+pip install hypermodern-python-tuto
+```
 
 ## Use
 
