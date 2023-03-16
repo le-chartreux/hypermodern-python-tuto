@@ -56,7 +56,7 @@ Repo to follow the Claudio Jolowicz's [tutorial about Hypermodern Python](https:
 
 ## Table of contents
 
-- [Description of the application](#description-of-the-application)
+- [Overview](#overview)
 - [Install](#install)
 - [Use](#use)
 - [Tools used](#tools-used)
@@ -75,7 +75,7 @@ Repo to follow the Claudio Jolowicz's [tutorial about Hypermodern Python](https:
     - [Communication](#communication)
     - [Data validation](#data-validation)
 
-## Description of the application
+## Overview
 
 The app created is a CLI application that queries a random Wikipedia page and displays its title and summary.
 
