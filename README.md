@@ -118,6 +118,7 @@ Tools that can be used in every Python project, no matter its content.
 #### Multi-purpose
 
 - [PyPI](https://pypi.org/), to install and publish Python packages
+- [TestPyPI](https://pypi.org/), PyPI but for testing purposes
 - [poetry](https://python-poetry.org/), to make development and distribution easy (packaging, virtualization, dependencies, launching and publishing)
 - [nox](https://nox.thea.codes/en/stable/), to run tasks in multiple Python environments (like tests, linting, reformatting, etc.)
 
