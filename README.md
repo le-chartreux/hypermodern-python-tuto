@@ -87,7 +87,17 @@ pip install hypermodern-python-tuto
 
 ## Use
 
-TODO
+### Basic usage
+
+Just run the following command:
+
+```shell
+hypermodern-python-tuto
+```
+
+### Other options
+
+Look at the [documentation](https://hypermodern-python-tuto.readthedocs.io/).
 
 ## Tools used
 
