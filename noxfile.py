@@ -38,7 +38,7 @@ def reformat(session: nox.Session) -> None:
     """Reformat with black."""
     formatter = "black"
     args = session.posargs or code_locations
-    _install_only(session, formatter)
+    _install(session, formatter)
     _run(session, formatter, *args)
 
 
@@ -131,12 +131,6 @@ def coverage(session: nox.Session) -> None:
 
 
 # everything after this line is utils
-
-
-def _install_only(session: nox.Session, group: str) -> None:
-    _install(session, f"--only={group}")
-
-
 def _install(session: nox.Session, *args: str) -> None:
     session.run(runner, "install", *args, external=True)
 
