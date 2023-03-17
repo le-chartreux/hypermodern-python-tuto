@@ -1,5 +1,5 @@
 """WikipediaRequester class declaration."""
-from typing import Any
+from typing import Any, Final
 
 import requests
 
@@ -13,7 +13,7 @@ class WikipediaRequester:
 
     def __init__(self) -> None:
         """Set up the WikipediaRequester."""
-        self.__base_url = (
+        self.__base_url: Final = (
             "https://{language}.wikipedia.org/api/rest_v1/page/random/summary"
         )
         self.__language = "en"
