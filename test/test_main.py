@@ -8,7 +8,7 @@ import requests
 from hypermodern_python_tuto.__main__ import main
 
 
-@pytest.fixture
+@pytest.fixture()
 def runner() -> click.testing.CliRunner:
     """Fixture for invoking command-line interfaces."""
     return click.testing.CliRunner()
@@ -63,7 +63,7 @@ def test_main_prints_message_on_request_error(
     assert "Error" in result.output
 
 
-@pytest.mark.e2e
+@pytest.mark.e2e()
 def test_main_succeeds_in_production_env(runner: click.testing.CliRunner) -> None:
     """It exits with a status code of zero (end-to-end)."""
     result = runner.invoke(main)
