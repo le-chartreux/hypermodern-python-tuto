@@ -141,6 +141,7 @@ Tools that can be used in every Python project, no matter its content.
 - [flake8-annotations](https://pypi.org/project/flake8-annotations/), to detect the absence of type annotations
 - [flake8-black](https://pypi.org/project/flake8-black/), to check if the code follows [black](https://black.readthedocs.io/en/stable/) formatting
 - [flake8-docstrings](https://pypi.org/project/flake8-docstrings/), to check that the code is correctly documented
+- [flake8-pytest-style](https://pypi.org/project/flake8-pytest-style/), to check style issues with pytest-based tests
 - [darglint](https://pypi.org/project/darglint/), to check that docstrings match function definitions
 
 #### Security

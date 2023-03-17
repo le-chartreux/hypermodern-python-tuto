@@ -21,6 +21,8 @@ select =
     F,
     # I: import order
     I,
+    # PT: pytest style
+    PT,
     # S: Bandit (security)
     S,
     # W: pycodestyle (violation of PEP-8)

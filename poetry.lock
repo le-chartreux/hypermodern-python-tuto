@@ -529,6 +529,33 @@ pycodestyle = "*"
 setuptools = "*"
 
 [[package]]
+name = "flake8-plugin-utils"
+version = "1.3.2"
+description = "The package provides base classes and utils for flake8 plugin writing"
+category = "dev"
+optional = false
+python-versions = ">=3.6,<4.0"
+files = [
+    {file = "flake8-plugin-utils-1.3.2.tar.gz", hash = "sha256:20fa2a8ca2decac50116edb42e6af0a1253ef639ad79941249b840531889c65a"},
+    {file = "flake8_plugin_utils-1.3.2-py3-none-any.whl", hash = "sha256:1fe43e3e9acf3a7c0f6b88f5338cad37044d2f156c43cb6b080b5f9da8a76f06"},
+]
+
+[[package]]
+name = "flake8-pytest-style"
+version = "1.7.2"
+description = "A flake8 plugin checking common style issues or inconsistencies with pytest-based tests."
+category = "dev"
+optional = false
+python-versions = ">=3.7.2,<4.0.0"
+files = [
+    {file = "flake8_pytest_style-1.7.2-py3-none-any.whl", hash = "sha256:f5d2aa3219163a052dd92226589d45fab8ea027a3269922f0c4029f548ea5cd1"},
+    {file = "flake8_pytest_style-1.7.2.tar.gz", hash = "sha256:b924197c99b951315949920b0e5547f34900b1844348432e67a44ab191582109"},
+]
+
+[package.dependencies]
+flake8-plugin-utils = ">=1.3.2,<2.0.0"
+
+[[package]]
 name = "gitdb"
 version = "4.0.10"
 description = "Git Object Database"
@@ -1673,4 +1700,4 @@ tests-strict = ["codecov (==2.0.15)", "pytest (==4.6.0)", "pytest (==4.6.0)", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "5aff76e0bc935172679c377e9d38a17f45cd885870bfed6181d053638fc96cf8"
+content-hash = "1a8ad32aee3acf9f74edd18aff56466b1cfbccec929c103bdfb030926a5ecac6"
