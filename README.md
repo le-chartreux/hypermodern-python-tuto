@@ -183,6 +183,5 @@ Tools to match specific needs of the projet.
 #### Data validation
 
 - [marshmallow](https://marshmallow.readthedocs.io/en/stable/), to serialize, deserialize and validate data
-- ~~[dessert](https://desert.readthedocs.io/en/stable/), to generate marshmallow serialization schemas~~ → not used because too limited (can't work with data where fields names are different from the ones of the target dataclass)
 
 I used [marshmallow](https://marshmallow.readthedocs.io/en/stable/) to follow the tutorial, but  [pydantic](https://docs.pydantic.dev/) is more known, and I find it easier to use.
