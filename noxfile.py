@@ -20,7 +20,7 @@ runner = "poetry"
 @nox.session(python=python_versions, tags=["test"])
 def pytest(session: nox.Session) -> None:
     """Run the test suite with pytest."""
-    args = session.posargs or ["--cov", "-m", "not e2e"]
+    args = session.posargs or ("--cov", "-m", "not e2e")
     _install(session)
     _run(session, "pytest", *args)
 
