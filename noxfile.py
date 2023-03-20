@@ -34,7 +34,7 @@ def lint(session: nox.Session) -> None:
 
 
 @nox.session(python=latest_python)
-def reformat(session: nox.Session) -> None:
+def black(session: nox.Session) -> None:
     """Reformat with black."""
     formatter = "black"
     args = session.posargs or code_locations
