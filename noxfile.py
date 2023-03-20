@@ -3,7 +3,7 @@ import tempfile
 
 import nox
 
-nox.options.sessions = "test", "lint", "safety", "mypy", "doctest"
+nox.options.sessions = "test", "doctest", "lint", "safety", "mypy"
 nox.options.reuse_existing_virtualenvs = True
 
 package_location = "./src/hypermodern_python_tuto"
@@ -21,6 +21,15 @@ runner = "poetry"
 def test(session: nox.Session) -> None:
     """Run the test suite with pytest."""
     args = session.posargs or ["--cov", "-m", "not e2e"]
+    _install(session)
+    _run(session, "pytest", *args)
+
+
+@nox.session(python=python_versions, tags=["test"])
+def doctest(session: nox.Session) -> None:
+    """Run doctests with pytest."""
+    args = session.posargs or [package_location]
+    args.append("--doctest-modules")
     _install(session)
     _run(session, "pytest", *args)
 
@@ -89,15 +98,6 @@ def typeguard(session: nox.Session) -> None:
     """Runtime type-check using typeguard (inside pytest)."""
     args = session.posargs or ["-m", "not e2e"]
     args.append("--typeguard-packages=hypermodern_python_tuto")
-    _install(session)
-    _run(session, "pytest", *args)
-
-
-@nox.session(python=python_versions, tags=["test"])
-def doctest(session: nox.Session) -> None:
-    """Run doctests with pytest."""
-    args = session.posargs or [package_location]
-    args.append("--doctest-modules")
     _install(session)
     _run(session, "pytest", *args)
 
