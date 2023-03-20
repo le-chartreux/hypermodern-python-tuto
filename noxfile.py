@@ -91,14 +91,6 @@ def mypy(session: nox.Session) -> None:
     _run(session, "mypy", *args)
 
 
-@nox.session(python=python_versions_under_3_11)
-def pytype(session: nox.Session) -> None:
-    """Static type-check using pytype."""
-    args = session.posargs or ["--disable=import-error", *code_locations]
-    _install(session)
-    _run(session, "pytype", *args)
-
-
 @nox.session(python=latest_python)
 def typeguard(session: nox.Session) -> None:
     """Runtime type-check using typeguard (inside pytest)."""
