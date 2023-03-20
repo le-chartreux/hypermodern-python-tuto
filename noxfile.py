@@ -3,7 +3,7 @@ import tempfile
 
 import nox
 
-nox.options.sessions = "test", "doctest", "flake8", "safety", "mypy"
+nox.options.sessions = "pytest", "doctest", "flake8", "safety", "mypy"
 nox.options.reuse_existing_virtualenvs = True
 
 package_location = "./src/hypermodern_python_tuto"
@@ -18,7 +18,7 @@ runner = "poetry"
 
 
 @nox.session(python=python_versions, tags=["test"])
-def test(session: nox.Session) -> None:
+def pytest(session: nox.Session) -> None:
     """Run the test suite with pytest."""
     args = session.posargs or ["--cov", "-m", "not e2e"]
     _install(session)
