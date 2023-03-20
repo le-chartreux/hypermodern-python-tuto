@@ -43,6 +43,15 @@ def black(session: nox.Session) -> None:
 
 
 @nox.session(python=latest_python)
+def isort(session: nox.Session) -> None:
+    """Reformat with black."""
+    formatter = "isort"
+    args = session.posargs or code_locations
+    _install(session)
+    _run(session, formatter, *args)
+
+
+@nox.session(python=latest_python)
 def safety(session: nox.Session) -> None:
     """Scan dependencies for insecure packages."""
     # not within poetry because it conflicts with black

@@ -137,7 +137,7 @@ Tools that can be used in every Python project, no matter its content.
 #### Linting
 
 - [flake8](https://flake8.pycqa.org/en/latest/), a linter aggregator
-- [flake8-import-order](https://github.com/PyCQA/flake8-import-order), to verify that imports are grouped and ordered in a consistent way
+- [flake8-isort](https://pypi.org/project/flake8-isort/), to verify that imports are grouped and ordered in a consistent way
 - [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear), to find bugs and design problems
 - [flake8-annotations](https://pypi.org/project/flake8-annotations/), to detect the absence of type annotations
 - [flake8-black](https://pypi.org/project/flake8-black/), to check if the code follows [black](https://black.readthedocs.io/en/stable/) formatting
@@ -153,6 +153,7 @@ Tools that can be used in every Python project, no matter its content.
 #### Formatting
 
 - [black](https://black.readthedocs.io/en/stable/), to format the code
+- [isort](https://pycqa.github.io/isort/index.html), to sort imports
 
 #### Type checking
 

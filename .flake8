@@ -52,10 +52,3 @@ per-file-ignores =
 
 # DOCSTRINGS
 docstring-convention = google
-
-# IMPORT ORDER
-application-import-names =
-    # hypermodern_python_tuto and test are local packages, not third party
-    hypermodern_python_tuto,
-    test
-import-order-style = google

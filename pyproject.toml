@@ -5,7 +5,7 @@ description = "Repo to follow the Claudio Jolowicz's tutorial about Hypermodern 
 documentation = "https://hypermodern-python-tuto.readthedocs.io"
 authors = ["le-chartreux <le-chartreux-vert@protonmail.com>"]
 readme = "README.md"
-packages = [{include = "hypermodern_python_tuto", from = "src"}]
+packages = [{ include = "hypermodern_python_tuto", from = "src" }]
 license = "MIT"
 repository = "https://github.com/le-chartreux/hypermodern-python-tuto"
 keywords = ["hypermodern"]
@@ -20,19 +20,22 @@ marshmallow = "^3.19.0"
 hypermodern-python-tuto = "hypermodern_python_tuto.__main__:main"
 
 [tool.poetry.group.dev.dependencies]
+# runner
 nox = "^2022.11.21"
 # format
 black = "^23.1.0"
+isort = "^5.12.0"
 # lint
 flake8 = "^6.0.0"
+setuptools = "^67.6.0"
 flake8-bandit = "^4.1.1"
 flake8-black = "^0.3.6"
 flake8-bugbear = "^23.2.13"
-flake8-import-order = "^0.18.2"
 flake8-annotations = "^3.0.0"
 flake8-docstrings = "^1.7.0"
-darglint = "^1.8.1"
 flake8-pytest-style = "^1.7.2"
+flake8-isort = "^6.0.0"
+darglint = "^1.8.1"
 # mypy
 mypy = "^1.0.1"
 typing-extensions = "^4.5.0"
@@ -44,7 +47,7 @@ pytest-mock = "^3.10.0"
 xdoctest = "^1.1.1"
 pygments = "^2.14.0"
 # pytype
-pytype = {version = "^2023.2.17", python = "~3.10"}
+pytype = { version = "^2023.2.17", python = "~3.10" }
 # typeguard
 typeguard = "^2.13.3"
 # docs
@@ -61,6 +64,10 @@ source = ["hypermodern_python_tuto"]
 [tool.coverage.report]
 show_missing = true
 fail_under = 100
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
 
 [build-system]
 requires = ["poetry-core"]
