@@ -17,7 +17,7 @@ python_versions_under_3_11 = [
 runner = "poetry"
 
 
-@nox.session(python=python_versions)
+@nox.session(python=python_versions, tags=["test"])
 def test(session: nox.Session) -> None:
     """Run the test suite with pytest."""
     args = session.posargs or ["--cov", "-m", "not e2e"]
@@ -25,7 +25,7 @@ def test(session: nox.Session) -> None:
     _run(session, "pytest", *args)
 
 
-@nox.session(python=latest_python)
+@nox.session(python=latest_python, tags=["style"])
 def lint(session: nox.Session) -> None:
     """Lint with flake8."""
     args = session.posargs or code_locations
@@ -33,14 +33,7 @@ def lint(session: nox.Session) -> None:
     _run(session, "flake8", *args)
 
 
-@nox.session(python=latest_python)
-def reformat(session: nox.Session) -> None:
-    """Run all the reformatting sessions."""
-    session.notify("black")
-    session.notify("isort")
-
-
-@nox.session(python=latest_python)
+@nox.session(python=latest_python, tags=["format"])
 def black(session: nox.Session) -> None:
     """Reformat with black."""
     formatter = "black"
@@ -49,7 +42,7 @@ def black(session: nox.Session) -> None:
     _run(session, formatter, *args)
 
 
-@nox.session(python=latest_python)
+@nox.session(python=latest_python, tags=["format"])
 def isort(session: nox.Session) -> None:
     """Reformat with isort."""
     formatter = "isort"
@@ -58,7 +51,7 @@ def isort(session: nox.Session) -> None:
     _run(session, formatter, *args)
 
 
-@nox.session(python=latest_python)
+@nox.session(python=latest_python, tags=["security"])
 def safety(session: nox.Session) -> None:
     """Scan dependencies for insecure packages."""
     # not within poetry because it conflicts with black
@@ -83,7 +76,7 @@ def safety(session: nox.Session) -> None:
         )
 
 
-@nox.session(python=python_versions)
+@nox.session(python=python_versions, tags=["typecheck"])
 def mypy(session: nox.Session) -> None:
     """Static type-check using mypy."""
     args = session.posargs or code_locations
@@ -91,7 +84,7 @@ def mypy(session: nox.Session) -> None:
     _run(session, "mypy", *args)
 
 
-@nox.session(python=latest_python)
+@nox.session(python=latest_python, tags=["typecheck"])
 def typeguard(session: nox.Session) -> None:
     """Runtime type-check using typeguard (inside pytest)."""
     args = session.posargs or ["-m", "not e2e"]
@@ -100,7 +93,7 @@ def typeguard(session: nox.Session) -> None:
     _run(session, "pytest", *args)
 
 
-@nox.session(python=python_versions)
+@nox.session(python=python_versions, tags=["test"])
 def doctest(session: nox.Session) -> None:
     """Run doctests with pytest."""
     args = session.posargs or [package_location]
@@ -109,14 +102,14 @@ def doctest(session: nox.Session) -> None:
     _run(session, "pytest", *args)
 
 
-@nox.session(python=latest_python)
+@nox.session(python=latest_python, tags=["documentation"])
 def docs(session: nox.Session) -> None:
     """Build the documentation."""
     _install(session)
     _run(session, "sphinx-build", "docs", "docs/_build")
 
 
-@nox.session(python=latest_python)
+@nox.session(python=latest_python, tags=["ci"])
 def coverage(session: nox.Session) -> None:
     """Upload coverage data."""
     args = session.posargs or [
