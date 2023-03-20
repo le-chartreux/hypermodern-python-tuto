@@ -132,7 +132,6 @@ Tools that can be used in every Python project, no matter its content.
 - [pytest](https://docs.pytest.org/en/latest/), a framework to write unit tests. Also used to run doctests
 - [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/), to mesure the code coverage (degree to which the source code of a program is executed while running its test suite)
 - [pytest-mock](https://pytest-mock.readthedocs.io/en/latest/), to use the [unittest](https://docs.python.org/3/library/unittest.html) mocking in the pytest way
-- [xdoctest](https://pypi.org/project/xdoctest/), to execute the doctests (tests in documentation strings)
 
 #### Linting
 

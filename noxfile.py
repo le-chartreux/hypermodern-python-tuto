@@ -117,14 +117,6 @@ def doctest(session: nox.Session) -> None:
     _run(session, "pytest", *args)
 
 
-@nox.session(python=python_versions)
-def xdoctest(session: nox.Session) -> None:
-    """Run doctests with xdoctest."""
-    args = session.posargs or [package_location]
-    _install(session)
-    _run(session, "xdoctest", *args)
-
-
 @nox.session(python=latest_python)
 def docs(session: nox.Session) -> None:
     """Build the documentation."""
