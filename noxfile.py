@@ -38,7 +38,7 @@ def black(session: nox.Session) -> None:
     """Reformat with black."""
     formatter = "black"
     args = session.posargs or code_locations
-    _install(session, formatter)
+    _install(session)
     _run(session, formatter, *args)
 
 
