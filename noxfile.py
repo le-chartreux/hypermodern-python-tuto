@@ -28,10 +28,7 @@ def pytest(session: nox.Session) -> None:
 @nox.session(python=python_versions, tags=["test"])
 def doctest(session: nox.Session) -> None:
     """Run doctests with pytest."""
-    args = session.posargs or [package_location]
-    args.append("--doctest-modules")
-    _install(session)
-    _run(session, "pytest", *args)
+    session.notify(f"pytest-{session.python}", (package_location, "--doctest-modules"))
 
 
 @nox.session(python=latest_python, tags=["lint"])
@@ -96,10 +93,9 @@ def mypy(session: nox.Session) -> None:
 @nox.session(python=latest_python, tags=["typecheck"])
 def typeguard(session: nox.Session) -> None:
     """Runtime type-check using typeguard (inside pytest)."""
-    args = session.posargs or ["-m", "not e2e"]
-    args.append("--typeguard-packages=hypermodern_python_tuto")
-    _install(session)
-    _run(session, "pytest", *args)
+    session.notify(
+        f"pytest-{session.python}", ("--typeguard-packages=hypermodern_python_tuto",)
+    )
 
 
 @nox.session(python=latest_python, tags=["documentation"])
