@@ -3,7 +3,7 @@ import tempfile
 
 import nox
 
-nox.options.sessions = "test", "doctest", "lint", "safety", "mypy"
+nox.options.sessions = "test", "doctest", "flake8", "safety", "mypy"
 nox.options.reuse_existing_virtualenvs = True
 
 package_location = "./src/hypermodern_python_tuto"
@@ -34,8 +34,8 @@ def doctest(session: nox.Session) -> None:
     _run(session, "pytest", *args)
 
 
-@nox.session(python=latest_python, tags=["style"])
-def lint(session: nox.Session) -> None:
+@nox.session(python=latest_python, tags=["lint"])
+def flake8(session: nox.Session) -> None:
     """Lint with flake8."""
     args = session.posargs or code_locations
     _install(session)
