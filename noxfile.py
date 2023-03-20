@@ -51,7 +51,7 @@ def black(session: nox.Session) -> None:
 
 @nox.session(python=latest_python)
 def isort(session: nox.Session) -> None:
-    """Reformat with black."""
+    """Reformat with isort."""
     formatter = "isort"
     args = session.posargs or code_locations
     _install(session)
