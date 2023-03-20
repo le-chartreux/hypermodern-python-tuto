@@ -34,6 +34,13 @@ def lint(session: nox.Session) -> None:
 
 
 @nox.session(python=latest_python)
+def reformat(session: nox.Session) -> None:
+    """Run all the reformatting sessions."""
+    session.notify("black")
+    session.notify("isort")
+
+
+@nox.session(python=latest_python)
 def black(session: nox.Session) -> None:
     """Reformat with black."""
     formatter = "black"
