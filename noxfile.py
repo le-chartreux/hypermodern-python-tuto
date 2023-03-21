@@ -39,19 +39,17 @@ def flake8(session: nox.Session) -> None:
 @nox.session(python=latest_python, tags=["format"])
 def black(session: nox.Session) -> None:
     """Reformat with black."""
-    formatter = "black"
     args = session.posargs or code_locations
     _install(session)
-    _run(session, formatter, *args)
+    _run(session, "black", *args)
 
 
 @nox.session(python=latest_python, tags=["format"])
 def isort(session: nox.Session) -> None:
     """Reformat with isort."""
-    formatter = "isort"
     args = session.posargs or code_locations
     _install(session)
-    _run(session, formatter, *args)
+    _run(session, "isort", *args)
 
 
 @nox.session(python=latest_python, tags=["security"])
