@@ -5,6 +5,7 @@ import nox
 
 nox.options.sessions = "pytest", "doctest", "flake8", "safety", "mypy"
 nox.options.reuse_existing_virtualenvs = True
+silent = True
 
 package_location = "./src/hypermodern_python_tuto"
 code_locations = package_location, "./test", "./noxfile.py"
@@ -67,6 +68,7 @@ def safety(session: nox.Session) -> None:
             "--without-hashes",
             f"--output={requirements.name}",
             external=True,
+            silent=silent,
         )
         session.install("safety")
         session.run(
@@ -74,6 +76,7 @@ def safety(session: nox.Session) -> None:
             "check",
             f"--file={requirements.name}",
             "--full-report",
+            silent=silent,
         )
 
 
@@ -116,8 +119,8 @@ def coverage(session: nox.Session) -> None:
 
 # everything after this line is utils
 def _install(session: nox.Session, *args: str) -> None:
-    session.run(runner, "install", *args, external=True)
+    session.run(runner, "install", *args, external=True, silent=silent)
 
 
 def _run(session: nox.Session, target: str, *args: str) -> None:
-    session.run(runner, "run", target, *args, external=True)
+    session.run(runner, "run", target, *args, external=True, silent=silent)
