@@ -10,9 +10,6 @@ package_location = "./src/hypermodern_python_tuto"
 code_locations = package_location, "./test", "./noxfile.py"
 python_versions = "3.10", "3.11"
 latest_python = python_versions[-1]
-python_versions_under_3_11 = [
-    python_version for python_version in python_versions if python_version < "3.11"
-]
 
 runner = "poetry"
 
