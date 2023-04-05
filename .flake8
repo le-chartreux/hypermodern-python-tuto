@@ -33,7 +33,7 @@ ignore =
     E203,
     # W503: to match black standards
     W503,
-    # E501: bug-bear already set it with a tolerance of 10% (B9)
+    # E501: bug-bear already set it with a tolerance of 10% (B950)
     E501,
     # ANN101: missing type annotation for self, but hinting them all the time is useless
     ANN101,
