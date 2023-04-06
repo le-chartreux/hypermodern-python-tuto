@@ -29,12 +29,6 @@ select =
     W
 
 ignore =
-    # E203: to match black standards
-    E203,
-    # W503: to match black standards
-    W503,
-    # E501: line size, but bug-bear already set it with a tolerance of 10% (B950)
-    E501,
     # ANN101: missing type annotation for self, but hinting them all the time is useless
     ANN101,
     # ANN102: missing type annotation for cls but hinting them all the time is useless
@@ -44,7 +38,13 @@ ignore =
     # DAR101: forces write parameters in docstring, but sometimes the description is clear enought
     DAR101,
     # DAR201: forces to write returns in docstring, but sometimes the description is clear enought
-    DAR201
+    DAR201,
+    # E203: to match black standards
+    E203,
+    # E501: line size, but bug-bear already set it with a tolerance of 10% (B950)
+    E501,
+    # W503: to match black standards
+    W503
 
 max-line-length = 88
 
