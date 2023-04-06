@@ -29,12 +29,14 @@ select =
     W
 
 ignore =
-    # ANN101: missing type annotation for self, but hinting them all the time is useless
+    # ANN101: missing type annotation for self, but hinting self all the time is useless
     ANN101,
-    # ANN102: missing type annotation for cls but hinting them all the time is useless
+    # ANN102: missing type annotation for cls but hinting cls all the time is useless
     ANN102,
     # ANN401: disallows Any, but some elements should be Any when they are external
     ANN401,
+    # B024: forces abstract classes to have at least one abstract method, but sometimes a class is virtually abstract
+    B024,
     # DAR101: forces write parameters in docstring, but sometimes the description is clear enought
     DAR101,
     # DAR201: forces to write returns in docstring, but sometimes the description is clear enought
