@@ -82,7 +82,7 @@ def safety(session: nox.Session) -> None:
 
 @nox.session(python=python_versions, tags=["typecheck"])
 def mypy(session: nox.Session) -> None:
-    """Static type-check using mypy."""
+    """Verify types using mypy (so it is static)."""
     args = session.posargs or code_locations
     _install(session)
     _run(session, "mypy", *args)
