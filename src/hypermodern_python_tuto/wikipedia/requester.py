@@ -38,10 +38,11 @@ class WikipediaRequester:
             response.raise_for_status()
             article = response.json()
         if not isinstance(article, dict):
-            raise ValueError(
+            error_message = (
                 "Error when requesting an article: expecting the response to contain "
                 f"a dictionary, got a {type(article)}. Content is {article}."
             )
+            raise ValueError(error_message)
         return article
 
     def _get_url(self) -> str:
@@ -52,10 +53,11 @@ class WikipediaRequester:
         schema = WikipediaArticleSchema()
         result = schema.load(article_dict)
         if not isinstance(result, WikipediaArticle):
-            raise ValueError(
+            error_message = (
                 "Error when loading with WikipediaArticleSchema: expected result type "
                 f"is WikipediaArticle, got a {type(result)} and result is {result}."
             )
+            raise ValueError(error_message)
         return result
 
     def set_language(self, language: Language) -> None:
