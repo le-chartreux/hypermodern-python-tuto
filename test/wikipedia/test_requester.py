@@ -3,6 +3,7 @@ import unittest.mock
 
 import marshmallow
 import pytest
+import pytest_mock
 
 from hypermodern_python_tuto.wikipedia.language import Language
 from hypermodern_python_tuto.wikipedia.requester import WikipediaRequester
@@ -37,3 +38,19 @@ def test__request_random_article_dict_handles_unexpected_response_content(
     )
     with pytest.raises(ValueError, match=expected_error_message):
         WikipediaRequester()._request_random_article_dict()
+
+
+def test__article_dict_to_article_handles_unexpected_schema_load(
+    mocker: pytest_mock.MockFixture,
+) -> None:
+    """It raises a ValueError if WikipediaArticleSchema.load don't return a WikipediaArticle."""
+    mock_schema_load = mocker.patch(
+        "hypermodern_python_tuto.wikipedia.article_schema.WikipediaArticleSchema.load"
+    )
+    mock_schema_load.return_value = "toto"
+    expected_error_message = (
+        "Error when loading with WikipediaArticleSchema: expected result type "
+        "is WikipediaArticle, got a <class 'str'> and result is toto."
+    )
+    with pytest.raises(ValueError, match=expected_error_message):
+        WikipediaRequester._article_dict_to_article({})

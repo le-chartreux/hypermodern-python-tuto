@@ -50,7 +50,13 @@ class WikipediaRequester:
     @staticmethod
     def _article_dict_to_article(article_dict: dict[Any, Any]) -> WikipediaArticle:
         schema = WikipediaArticleSchema()
-        return schema.load(article_dict)
+        result = schema.load(article_dict)
+        if not isinstance(result, WikipediaArticle):
+            raise ValueError(
+                "Error when loading with WikipediaArticleSchema: expected result type "
+                f"is WikipediaArticle, got a {type(result)} and result is {result}."
+            )
+        return result
 
     def set_language(self, language: Language) -> None:
         """Specify the desired language of Wikipedia.
