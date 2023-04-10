@@ -37,6 +37,11 @@ class WikipediaRequester:
         with requests.get(self._get_url(), timeout=5) as response:
             response.raise_for_status()
             article = response.json()
+        if not isinstance(article, dict):
+            raise ValueError(
+                "Error when requesting an article: expecting the response to contain "
+                f"a dictionary, got a {type(article)}. Content is {article}."
+            )
         return article
 
     def _get_url(self) -> str:

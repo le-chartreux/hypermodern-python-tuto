@@ -24,3 +24,16 @@ def test_random_page_handles_validation_errors(
     mock_requests_get.return_value.__enter__.return_value.json.return_value = {}
     with pytest.raises(marshmallow.ValidationError):
         WikipediaRequester().get_random_article()
+
+
+def test__request_random_article_dict_handles_unexpected_response_content(
+    mock_requests_get: unittest.mock.Mock,
+) -> None:
+    """It raises a ValueError when the response's content is not a dict."""
+    mock_requests_get.return_value.__enter__.return_value.json.return_value = 13
+    expected_error_message = (
+        "Error when requesting an article: expecting the response to contain a "
+        "dictionary, got a <class 'int'>. Content is 13."
+    )
+    with pytest.raises(ValueError, match=expected_error_message):
+        WikipediaRequester()._request_random_article_dict()
