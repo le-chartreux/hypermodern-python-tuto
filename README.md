@@ -106,11 +106,11 @@ Look at the [documentation](https://hypermodern-python-tuto.readthedocs.io/).
 
 Tools that can be used in every development project, no matter if it's a Python project or not.
 
+- [Codecov](https://about.codecov.io/), to mesure code coverage on repos. I let it in this project since it is already setup, but I don't think I will use it in other projects.
 - [git](https://git-scm.com/), to manage versions of the source code.
 - [GitHub](https://github.com/le-chartreux/hypermodern-python-tuto), to host the git repository and automate tasks with [GitHub Actions](https://docs.github.com/en/actions):
   - [Release Drafter](https://github.com/marketplace/actions/release-drafter), to create release templates.
 - [pre-commit](https://pre-commit.com/), to manage pre-commit hooks.
-- [Codecov](https://about.codecov.io/), to mesure code coverage on repos. I let it in this project since it is already setup, but I don't think I will use it in other projects.
 
 ### Generic Python tools
 
@@ -118,10 +118,10 @@ Tools that can be used in every Python project, no matter its content.
 
 #### Multi-purpose
 
-- [PyPI](https://pypi.org/), to install and publish Python packages.
-- [TestPyPI](https://pypi.org/), PyPI but for testing purposes.
-- [poetry](https://python-poetry.org/), to make development and distribution easy (packaging, virtualization, dependencies, launching and publishing).
 - [nox](https://nox.thea.codes/en/stable/), to run tasks in multiple Python environments (like tests, linting, reformatting, etc.).
+- [PyPI](https://pypi.org/), to install and publish Python packages.
+- [poetry](https://python-poetry.org/), to make development and distribution easy (packaging, virtualization, dependencies, launching and publishing).
+- [TestPyPI](https://pypi.org/), PyPI but for testing purposes.
 
 #### Setup
 
@@ -135,14 +135,15 @@ Tools that can be used in every Python project, no matter its content.
 
 #### Linting
 
-- [flake8](https://flake8.pycqa.org/en/latest/), a linter aggregator.
-- [flake8-isort](https://pypi.org/project/flake8-isort/), to verify that imports are grouped and ordered in a consistent way.
-- [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear), to find bugs and design problems.
-- [flake8-annotations](https://pypi.org/project/flake8-annotations/), to detect the absence of type annotations.
-- [flake8-black](https://pypi.org/project/flake8-black/), to check if the code follows [black](https://black.readthedocs.io/en/stable/) formatting.
-- [flake8-docstrings](https://pypi.org/project/flake8-docstrings/), to check that the code is correctly documented.
-- [flake8-pytest-style](https://pypi.org/project/flake8-pytest-style/), to check style issues with pytest-based tests.
 - [darglint](https://pypi.org/project/darglint/), to check that docstrings match function definitions.
+- [flake8](https://flake8.pycqa.org/en/latest/), a linter aggregator, with:
+  - [flake8-annotations](https://pypi.org/project/flake8-annotations/), to detect the absence of type annotations.
+  - [flake8-bandit](https://pypi.org/project/flake8-bandit/)), to find security issues.
+  - [flake8-black](https://pypi.org/project/flake8-black/), to check if the code follows [black](https://black.readthedocs.io/en/stable/) formatting.
+  - [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear), to find bugs and design problems.
+  - [flake8-docstrings](https://pypi.org/project/flake8-docstrings/), to check that the code is correctly documented.
+  - [flake8-isort](https://pypi.org/project/flake8-isort/), to verify that imports are grouped and ordered in a consistent way.
+  - [flake8-pytest-style](https://pypi.org/project/flake8-pytest-style/), to check style issues with pytest-based tests.
 
 #### Security
 
@@ -160,11 +161,11 @@ Tools that can be used in every Python project, no matter its content.
 
 #### Documentation
 
-- [Sphinx](https://www.sphinx-doc.org/en/master/), the documentation tool used by the official Python documentation.
 - [Read the Docs](https://readthedocs.org/), to host the documentation.
-- [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html), Sphinx official plugin to generate API documentation from the docstrings.
-- [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html), Sphinx official plugin to allow compatibility with Google-style docstrings.
-- [sphinx-autodoc-typehints](https://pypi.org/project/sphinx-autodoc-typehints/), Sphinx plugin to detect type hints in generated documentation.
+- [Sphinx](https://www.sphinx-doc.org/en/master/), the documentation tool used by the official Python documentation, with:
+  - [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html), Sphinx official plugin to generate API documentation from the docstrings.
+  - [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html), Sphinx official plugin to allow compatibility with Google-style docstrings.
+  - [sphinx-autodoc-typehints](https://pypi.org/project/sphinx-autodoc-typehints/), Sphinx plugin to detect type hints in generated documentation.
 
 ### Specific Python tools
 
