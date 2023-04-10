@@ -42,7 +42,7 @@ class WikipediaRequester:
                 "Error when requesting an article: expecting the response to contain "
                 f"a dictionary, got a {type(article)}. Content is {article}."
             )
-            raise ValueError(error_message)
+            raise TypeError(error_message)
         return article
 
     def _get_url(self) -> str:
@@ -57,7 +57,7 @@ class WikipediaRequester:
                 "Error when loading with WikipediaArticleSchema: expected result type "
                 f"is WikipediaArticle, got a {type(result)} and result is {result}."
             )
-            raise ValueError(error_message)
+            raise TypeError(error_message)
         return result
 
     def set_language(self, language: Language) -> None:
