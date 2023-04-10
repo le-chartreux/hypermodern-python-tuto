@@ -106,11 +106,11 @@ Look at the [documentation](https://hypermodern-python-tuto.readthedocs.io/).
 
 Tools that can be used in every development project, no matter if it's a Python project or not.
 
-- [git](https://git-scm.com/), to manage versions of the source code
+- [git](https://git-scm.com/), to manage versions of the source code.
 - [GitHub](https://github.com/le-chartreux/hypermodern-python-tuto), to host the git repository and automate tasks with [GitHub Actions](https://docs.github.com/en/actions):
-  - [Release Drafter](https://github.com/marketplace/actions/release-drafter), to create release templates
-- [pre-commit](https://pre-commit.com/), to manage pre-commit hooks
-- [Codecov](https://about.codecov.io/), to mesure code coverage on repos. I let it in this project since it is already setup, but I don't think I will use it in other projects
+  - [Release Drafter](https://github.com/marketplace/actions/release-drafter), to create release templates.
+- [pre-commit](https://pre-commit.com/), to manage pre-commit hooks.
+- [Codecov](https://about.codecov.io/), to mesure code coverage on repos. I let it in this project since it is already setup, but I don't think I will use it in other projects.
 
 ### Generic Python tools
 
@@ -118,45 +118,45 @@ Tools that can be used in every Python project, no matter its content.
 
 #### Multi-purpose
 
-- [PyPI](https://pypi.org/), to install and publish Python packages
-- [TestPyPI](https://pypi.org/), PyPI but for testing purposes
-- [poetry](https://python-poetry.org/), to make development and distribution easy (packaging, virtualization, dependencies, launching and publishing)
-- [nox](https://nox.thea.codes/en/stable/), to run tasks in multiple Python environments (like tests, linting, reformatting, etc.)
+- [PyPI](https://pypi.org/), to install and publish Python packages.
+- [TestPyPI](https://pypi.org/), PyPI but for testing purposes.
+- [poetry](https://python-poetry.org/), to make development and distribution easy (packaging, virtualization, dependencies, launching and publishing).
+- [nox](https://nox.thea.codes/en/stable/), to run tasks in multiple Python environments (like tests, linting, reformatting, etc.).
 
 #### Setup
 
-- [pyenv](https://github.com/pyenv/pyenv), to manage Python versions
+- [pyenv](https://github.com/pyenv/pyenv), to manage Python versions.
 
 #### Test
 
-- [pytest](https://docs.pytest.org/en/latest/), a framework to write unit tests. Also used to run doctests
-- [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/), to mesure the code coverage (degree to which the source code of a program is executed while running its test suite)
-- [pytest-mock](https://pytest-mock.readthedocs.io/en/latest/), to use the [unittest](https://docs.python.org/3/library/unittest.html) mocking in the pytest way
+- [pytest](https://docs.pytest.org/en/latest/), a framework to write unit tests. Also used to run doctests.
+- [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/), to mesure the code coverage (degree to which the source code of a program is executed while running its test suite).
+- [pytest-mock](https://pytest-mock.readthedocs.io/en/latest/), to use the [unittest](https://docs.python.org/3/library/unittest.html) mocking in the pytest way.
 
 #### Linting
 
-- [flake8](https://flake8.pycqa.org/en/latest/), a linter aggregator
-- [flake8-isort](https://pypi.org/project/flake8-isort/), to verify that imports are grouped and ordered in a consistent way
-- [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear), to find bugs and design problems
-- [flake8-annotations](https://pypi.org/project/flake8-annotations/), to detect the absence of type annotations
-- [flake8-black](https://pypi.org/project/flake8-black/), to check if the code follows [black](https://black.readthedocs.io/en/stable/) formatting
-- [flake8-docstrings](https://pypi.org/project/flake8-docstrings/), to check that the code is correctly documented
-- [flake8-pytest-style](https://pypi.org/project/flake8-pytest-style/), to check style issues with pytest-based tests
-- [darglint](https://pypi.org/project/darglint/), to check that docstrings match function definitions
+- [flake8](https://flake8.pycqa.org/en/latest/), a linter aggregator.
+- [flake8-isort](https://pypi.org/project/flake8-isort/), to verify that imports are grouped and ordered in a consistent way.
+- [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear), to find bugs and design problems.
+- [flake8-annotations](https://pypi.org/project/flake8-annotations/), to detect the absence of type annotations.
+- [flake8-black](https://pypi.org/project/flake8-black/), to check if the code follows [black](https://black.readthedocs.io/en/stable/) formatting.
+- [flake8-docstrings](https://pypi.org/project/flake8-docstrings/), to check that the code is correctly documented.
+- [flake8-pytest-style](https://pypi.org/project/flake8-pytest-style/), to check style issues with pytest-based tests.
+- [darglint](https://pypi.org/project/darglint/), to check that docstrings match function definitions.
 
 #### Security
 
-- [Bandit](https://bandit.readthedocs.io/en/latest/), to find security issues (used inside linting with [flake8-bandit](https://pypi.org/project/flake8-bandit/))
-- [Safety](https://pyup.io/safety/), to check if some packages are insecure
+- [Bandit](https://bandit.readthedocs.io/en/latest/), to find security issues (used inside linting with [flake8-bandit](https://pypi.org/project/flake8-bandit/)).
+- [Safety](https://pyup.io/safety/), to check if some packages are insecure.
 
 #### Formatting
 
-- [black](https://black.readthedocs.io/en/stable/), to format the code
-- [isort](https://pycqa.github.io/isort/index.html), to sort imports
+- [black](https://black.readthedocs.io/en/stable/), to format the code.
+- [isort](https://pycqa.github.io/isort/index.html), to sort imports.
 
 #### Type checking
 
-- [mypy](https://mypy-lang.org/), the classic type checker
+- [mypy](https://mypy-lang.org/), the classic type checker.
 
 #### Documentation
 
@@ -172,14 +172,14 @@ Tools to match specific needs of the projet.
 
 #### UI
 
-- [click](https://click.palletsprojects.com/en/8.1.x/), to create CLI applications
+- [click](https://click.palletsprojects.com/en/8.1.x/), to create CLI applications.
 
 #### Communication
 
-- [requests](https://requests.readthedocs.io/en/latest/), to make HTTP requests
+- [requests](https://requests.readthedocs.io/en/latest/), to make HTTP requests.
 
 #### Data validation
 
-- [marshmallow](https://marshmallow.readthedocs.io/en/stable/), to serialize, deserialize and validate data
+- [marshmallow](https://marshmallow.readthedocs.io/en/stable/), to serialize, deserialize and validate data.
 
 I used [marshmallow](https://marshmallow.readthedocs.io/en/stable/) to follow the tutorial, but  [pydantic](https://docs.pydantic.dev/) is more known, and I find it easier to use.
