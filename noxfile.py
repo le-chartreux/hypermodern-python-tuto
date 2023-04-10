@@ -3,7 +3,7 @@ import tempfile
 
 import nox
 
-nox.options.sessions = "pytest", "doctest", "flake8", "safety", "mypy"
+nox.options.sessions = "pytest", "doctest", "ruff", "safety", "mypy"
 nox.options.reuse_existing_virtualenvs = True
 silent_default = True
 silent_format = False
@@ -31,11 +31,11 @@ def doctest(session: nox.Session) -> None:
 
 
 @nox.session(python=latest_python, tags=["lint"])
-def flake8(session: nox.Session) -> None:
-    """Lint with flake8."""
+def ruff(session: nox.Session) -> None:
+    """Lint with ruff."""
     args = session.posargs or code_locations
     _install(session)
-    _run(session, "flake8", *args)
+    _run(session, "ruff", "check", *args)
 
 
 @nox.session(python=latest_python, tags=["format"])
