@@ -110,7 +110,7 @@ Tools that can be used in every development project, no matter if it's a Python 
 - [GitHub](https://github.com/le-chartreux/hypermodern-python-tuto), to host the git repository and automate tasks with [GitHub Actions](https://docs.github.com/en/actions):
   - [Release Drafter](https://github.com/marketplace/actions/release-drafter), to create release templates
 - [pre-commit](https://pre-commit.com/), to manage pre-commit hooks
-- [Codecov](https://about.codecov.io/), to mesure code coverage on repos
+- [Codecov](https://about.codecov.io/), to mesure code coverage on repos. I let it in this project since it is already setup, but I don't think I will use it in other projects
 
 ### Generic Python tools
 
