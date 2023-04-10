@@ -36,7 +36,7 @@ def test__request_random_article_dict_handles_unexpected_response_content(
         "Error when requesting an article: expecting the response to contain a "
         "dictionary, got a <class 'int'>. Content is 13."
     )
-    with pytest.raises(ValueError, match=expected_error_message):
+    with pytest.raises(TypeError, match=expected_error_message):
         WikipediaRequester()._request_random_article_dict()
 
 
@@ -52,5 +52,5 @@ def test__article_dict_to_article_handles_unexpected_schema_load(
         "Error when loading with WikipediaArticleSchema: expected result type "
         "is WikipediaArticle, got a <class 'str'> and result is toto."
     )
-    with pytest.raises(ValueError, match=expected_error_message):
+    with pytest.raises(TypeError, match=expected_error_message):
         WikipediaRequester._article_dict_to_article({})
