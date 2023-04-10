@@ -135,15 +135,16 @@ Tools that can be used in every Python project, no matter its content.
 
 #### Linting
 
+All the following lints are aggregated with [flake8](https://flake8.pycqa.org/en/latest/), a linter aggregator.
+
 - [darglint](https://pypi.org/project/darglint/), to check that docstrings match function definitions.
-- [flake8](https://flake8.pycqa.org/en/latest/), a linter aggregator, with:
-  - [flake8-annotations](https://pypi.org/project/flake8-annotations/), to detect the absence of type annotations.
-  - [flake8-bandit](https://pypi.org/project/flake8-bandit/)), to find security issues.
-  - [flake8-black](https://pypi.org/project/flake8-black/), to check if the code follows [black](https://black.readthedocs.io/en/stable/) formatting.
-  - [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear), to find bugs and design problems.
-  - [flake8-docstrings](https://pypi.org/project/flake8-docstrings/), to check that the code is correctly documented.
-  - [flake8-isort](https://pypi.org/project/flake8-isort/), to verify that imports are grouped and ordered in a consistent way.
-  - [flake8-pytest-style](https://pypi.org/project/flake8-pytest-style/), to check style issues with pytest-based tests.
+- [flake8-annotations](https://pypi.org/project/flake8-annotations/), to detect the absence of type annotations.
+- [flake8-bandit](https://pypi.org/project/flake8-bandit/)), to find security issues.
+- [flake8-black](https://pypi.org/project/flake8-black/), to check if the code follows [black](https://black.readthedocs.io/en/stable/) formatting.
+- [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear), to find bugs and design problems.
+- [flake8-docstrings](https://pypi.org/project/flake8-docstrings/), to check that the code is correctly documented.
+- [flake8-isort](https://pypi.org/project/flake8-isort/), to verify that imports are grouped and ordered in a consistent way.
+- [flake8-pytest-style](https://pypi.org/project/flake8-pytest-style/), to check style issues with pytest-based tests.
 
 #### Security
 
