@@ -32,10 +32,10 @@ class Language(str, enum.Enum):
         """
         if os.name == "posix":
             return cls._from_preferences_posix()
-        elif os.name == "nt":
+        if os.name == "nt":
             return cls._from_preferences_windows()
-        else:
-            raise RuntimeError(f"Unsupported operating system: {os.name}.")
+        error_message = f"Unsupported operating system: {os.name}."
+        raise RuntimeError(error_message)
 
     @classmethod
     def _from_preferences_posix(cls) -> "Language":
@@ -44,7 +44,7 @@ class Language(str, enum.Enum):
 
     @classmethod
     def _from_preferences_windows(cls) -> "Language":
-        windll = ctypes.windll.kernel32  # type: ignore
+        windll = ctypes.windll.kernel32  # type: ignore[attr-defined]
         language = locale.windows_locale[windll.GetUserDefaultUILanguage()]
         return cls.from_str(language)
 
@@ -73,7 +73,6 @@ class Language(str, enum.Enum):
         language = language.lower()
         if language.startswith("fr"):
             return cls.FRENCH
-        elif language.startswith("en"):
+        if language.startswith("en"):
             return cls.ENGLISH
-        else:
-            return cls.OTHER
+        return cls.OTHER

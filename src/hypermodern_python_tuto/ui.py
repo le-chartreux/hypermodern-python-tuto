@@ -3,12 +3,10 @@ import textwrap
 
 import click
 
-import hypermodern_python_tuto.wikipedia.article
+from hypermodern_python_tuto.wikipedia.article import WikipediaArticle
 
 
-def print_wikipedia_article(
-    wikipedia_article: hypermodern_python_tuto.wikipedia.article.WikipediaArticle,
-) -> None:
+def print_wikipedia_article(wikipedia_article: WikipediaArticle) -> None:
     """Show an article on the standard text output.
 
     Prints in green the title, followed by the summary.
@@ -17,7 +15,7 @@ def print_wikipedia_article(
         wikipedia_article: the article to print.
 
     Examples:
-        >>> article = hypermodern_python_tuto.wikipedia.article.WikipediaArticle("a", "b")
+        >>> article = WikipediaArticle("a", "b")
         >>> print_wikipedia_article(article)
         a
         b
