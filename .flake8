@@ -37,9 +37,9 @@ ignore =
     ANN401,
     # B024: forces abstract classes to have at least one abstract method, but sometimes a class is virtually abstract
     B024,
-    # DAR101: forces write parameters in docstring, but sometimes the description is clear enought
+    # DAR101: forces write parameters in docstring, but sometimes the description is clear enough
     DAR101,
-    # DAR201: forces to write returns in docstring, but sometimes the description is clear enought
+    # DAR201: forces to write returns in docstring, but sometimes the description is clear enough
     DAR201,
     # E203: to match black standards
     E203,
