@@ -66,6 +66,7 @@ skip_gitignore = true
 
 [tool.mypy]
 ignore_missing_imports = true
+strict = true
 
 [build-system]
 requires = ["poetry-core"]
