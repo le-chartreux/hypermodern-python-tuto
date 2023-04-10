@@ -32,7 +32,7 @@ class Language(str, enum.Enum):
         """
         if os.name == "posix":
             return cls._from_preferences_posix()
-        elif os.name == "nt":
+        if os.name == "nt":
             return cls._from_preferences_windows()
         error_message = f"Unsupported operating system: {os.name}."
         raise RuntimeError(error_message)
@@ -73,6 +73,6 @@ class Language(str, enum.Enum):
         language = language.lower()
         if language.startswith("fr"):
             return cls.FRENCH
-        elif language.startswith("en"):
+        if language.startswith("en"):
             return cls.ENGLISH
         return cls.OTHER
