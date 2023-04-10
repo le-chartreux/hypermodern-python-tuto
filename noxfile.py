@@ -5,7 +5,8 @@ import nox
 
 nox.options.sessions = "pytest", "doctest", "flake8", "safety", "mypy"
 nox.options.reuse_existing_virtualenvs = True
-silent = True
+silent_default = True
+silent_format = False
 
 package_location = "./src/hypermodern_python_tuto"
 code_locations = package_location, "./test", "./noxfile.py"
@@ -42,7 +43,7 @@ def black(session: nox.Session) -> None:
     """Reformat with black."""
     args = session.posargs or code_locations
     _install(session)
-    _run(session, "black", *args)
+    _run(session, "black", *args, silent=silent_format)
 
 
 @nox.session(python=latest_python, tags=["format"])
@@ -50,7 +51,7 @@ def isort(session: nox.Session) -> None:
     """Reformat with isort."""
     args = session.posargs or code_locations
     _install(session)
-    _run(session, "isort", *args)
+    _run(session, "isort", *args, silent=silent_format)
 
 
 @nox.session(python=latest_python, tags=["security"])
@@ -68,7 +69,7 @@ def safety(session: nox.Session) -> None:
             "--without-hashes",
             f"--output={requirements.name}",
             external=True,
-            silent=silent,
+            silent=silent_default,
         )
         session.install("safety")
         session.run(
@@ -76,7 +77,7 @@ def safety(session: nox.Session) -> None:
             "check",
             f"--file={requirements.name}",
             "--full-report",
-            silent=silent,
+            silent=silent_default,
         )
 
 
@@ -111,8 +112,10 @@ def coverage(session: nox.Session) -> None:
 
 # everything after this line is utils
 def _install(session: nox.Session, *args: str) -> None:
-    session.run(runner, "install", *args, external=True, silent=silent)
+    session.run(runner, "install", *args, external=True, silent=silent_default)
 
 
-def _run(session: nox.Session, target: str, *args: str) -> None:
+def _run(
+    session: nox.Session, target: str, *args: str, silent: bool = silent_default
+) -> None:
     session.run(runner, "run", target, *args, external=True, silent=silent)
