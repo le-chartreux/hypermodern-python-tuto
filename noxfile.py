@@ -88,14 +88,6 @@ def mypy(session: nox.Session) -> None:
     _run(session, "mypy", *args)
 
 
-@nox.session(python=latest_python, tags=["typecheck"])
-def typeguard(session: nox.Session) -> None:
-    """Runtime type-check using typeguard (inside pytest)."""
-    session.notify(
-        f"pytest-{session.python}", ("--typeguard-packages=hypermodern_python_tuto",)
-    )
-
-
 @nox.session(python=latest_python, tags=["documentation"])
 def docs(session: nox.Session) -> None:
     """Build the documentation."""
