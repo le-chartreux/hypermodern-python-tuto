@@ -32,7 +32,7 @@ def doctest(session: nox.Session) -> None:
 
 @nox.session(python=latest_python, tags=["lint"])
 def ruff(session: nox.Session) -> None:
-    """Lint with ruff."""
+    """Lint with Ruff."""
     args = session.posargs or code_locations
     _install(session)
     _run(session, "ruff", "check", *args)
