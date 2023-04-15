@@ -139,7 +139,7 @@ Tools that can be used in every Python project, no matter its content.
 
 #### Security
 
-- [Bandit](https://bandit.readthedocs.io/en/latest/), to find security issues (used inside linting with [flake8-bandit](https://pypi.org/project/flake8-bandit/)).
+- [Bandit](https://bandit.readthedocs.io/en/latest/), to find security issues (used inside [Ruff](#linting)).
 - [Safety](https://pyup.io/safety/), to check if some packages are insecure.
 
 #### Formatting
