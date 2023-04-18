@@ -118,6 +118,7 @@ ignore = [
     "ANN102", # missing type annotation for cls but hinting cls all the time is useless
     "ANN401", # disallows Any, but some elements should be Any when they are external
     "B024", # forces abstract classes to have at least one abstract method, but sometimes a class is virtually abstract
+    "D105", # docstrings on magic methods, useless docstrings are well known 
     "E501" # line size, but bug-bear already set it with a tolerance of 10% (B950)
 ]
 
