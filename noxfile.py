@@ -11,7 +11,7 @@ SILENT_CODE_MODIFIERS = False
 RUNNER = "poetry"
 
 # targets
-PACKAGE_LOCATION = "./src/hypermodern_python_tuto"
+PACKAGE_LOCATION = "./src"
 CODE_LOCATIONS = PACKAGE_LOCATION, "./test", "./noxfile.py"
 PYTHON_VERSIONS = "3.10", "3.11"
 LATEST_PYTHON = PYTHON_VERSIONS[-1]
