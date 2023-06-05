@@ -28,7 +28,9 @@ def pytest(session: nox.Session) -> None:
 @nox.session(python=PYTHON_VERSIONS, tags=["test"])
 def doctest(session: nox.Session) -> None:
     """Run doctests with pytest."""
-    session.notify(f"pytest-{session.python}", (PACKAGE_LOCATION, "--doctest-modules"))
+    args = session.posargs or (PACKAGE_LOCATION, "--doctest-modules")
+    _install(session)
+    _run(session, "pytest", *args)
 
 
 @nox.session(python=LATEST_PYTHON, tags=["lint"])
