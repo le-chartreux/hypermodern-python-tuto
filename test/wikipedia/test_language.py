@@ -32,7 +32,7 @@ def test_from_preferences_os_unsupported(monkeypatch: pytest.MonkeyPatch) -> Non
     """It can't search preferred language on an unsupported os."""
     monkeypatch.setattr(os, "name", "unsupported")
     with pytest.raises(RuntimeError):
-        assert Language.from_preferences() == Language.FRENCH
+        Language.from_preferences()
 
 
 def test_from_preferences_posix(monkeypatch: pytest.MonkeyPatch) -> None:
